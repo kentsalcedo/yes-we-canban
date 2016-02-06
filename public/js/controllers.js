@@ -1,3 +1,5 @@
+
+// "use strict"
 // basic controller, inside the function arguements, you put dependencies
 // first arguement is the name of the controller and function
 // $ is an angular created code
@@ -7,7 +9,9 @@
 // per angular docs, pass an array instead of a function
 
 angular.module('myApp')
-.controller('myController', ['$scope', function($scope){
+.controller('myController', ['$scope', 'mainCharacter', function($scope, mainCharacter){
   $scope.myFirstName = "Kent";
   $scope.myModel = "Ready Player One";
+  $scope.mainCharacter = mainCharacter;
+
 }]);
