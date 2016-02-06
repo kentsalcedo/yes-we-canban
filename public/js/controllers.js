@@ -9,9 +9,13 @@
 // per angular docs, pass an array instead of a function
 
 angular.module('myApp')
-.controller('myController', ['$scope', 'mainCharacter', function($scope, mainCharacter){
+.controller('myController', ['$scope', 'mainCharacter', 'characterVersionFactory',
+  function($scope, mainCharacter, characterVersionFactory){
   $scope.myFirstName = "Kent";
   $scope.myModel = "Ready Player One";
   $scope.mainCharacter = mainCharacter;
+  $scope.characterVersionFactory = characterVersionFactory;
+
+
 
 }]);
