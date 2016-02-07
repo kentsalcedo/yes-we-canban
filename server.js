@@ -25,6 +25,10 @@ app.get('/api/movies', function(req,res){
   res.json(movies);
 });
 
+app.get('*', function(req,res) {
+ res.sendFile('/public/index.html', { root : __dirname });
+});
+
 var server = app.listen(PORT, function(){
 // app.listen(PORT, function(){
   // these are back ticks, back ticks say there is string interpolation in this statement

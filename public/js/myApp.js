@@ -5,8 +5,13 @@ angular.module('myApp', ['ngRoute']);
 var myApp = angular.module('myApp');
 
 myApp
-.config(['MoviesProvider', '$routeProvider', function(MoviesProvider,$routeProvider) {
+.config(['MoviesProvider', '$routeProvider', '$locationProvider', function(MoviesProvider,$routeProvider, $locationProvider) {
   MoviesProvider.setEndPoint('http://localhost:3001/api/movies');
+
+  $locationProvider.html5Mode({
+    enabled: true,
+    requireBase: false
+  });
 
   $routeProvider
     .when('/',{
@@ -23,6 +28,10 @@ myApp
     .when('/other', {
       templateUrl  : 'views/other.html',
       controller : 'OtherController'
+    })
+    .otherwise({
+      templateUrl  : 'views/404.html',
+
     });
 
 }])
