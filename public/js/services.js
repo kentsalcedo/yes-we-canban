@@ -3,7 +3,7 @@
 // "use strict"
 
   function BookService(){
-    var books = [
+    this.books = [
       {
         id : 1,
         title : 'Chaz Crying',
@@ -22,11 +22,11 @@
     ];
 
     this.getBooks = function(){
-      return books;
+      return this.books;
     };
 
     this.getBook = function(id){
-      return books.filter(function(book){ // returns array of books
+      return this.books.filter(function(book){ // returns array of books
         return book.id === id; // boolean
       })
       .reduce(function(_,book){ // _ means you don't care about the first arg
@@ -34,12 +34,19 @@
       });
     };
 
-  }
+    this.addBook = function(book){
+      var nextId = this.books.length + 1;
+      book.id = nextId;
+      this.books.push({
+        id : nextId,
+        title : book.title,
+        author : book.author
+      });
+    };
+
+  } // end of this function
 
   angular.module('myApp')
     .service('BookService', BookService);
 
 })();
-
-  // angular.modules('myApp')
-  //   .service('BookService', BookService);
