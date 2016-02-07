@@ -50,6 +50,16 @@
           <button type="button" ng-click="BookService.addBook(new_book); new_book = null;">Add Book</button>
         </div>
       </fieldset>
+
+      <div class="movies_container">
+        <ul class="movies">
+          <li class="movies" ng-repeat="movie in movies">
+            <h4 class="movie_title">{{ movie.title }}</h4>
+            <p class="movie_year">{{ movie.year }}</p>
+          </li>
+        </ul>
+      </div>
+
     </div>
 
   </div>
@@ -61,5 +71,6 @@
   <script type="text/javascript" src="js/constants.js"></script>
   <script type="text/javascript" src="js/factories.js"></script>
   <script type="text/javascript" src="js/services.js"></script>
+  <script type="text/javascript" src="js/providers.js"></script>
 </body>
 </html>
