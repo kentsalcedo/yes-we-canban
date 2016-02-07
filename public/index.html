@@ -37,7 +37,7 @@
         <input type="text" id="search_book_title" ng-model="searchBookFilter">
       </div>
       <ul class="books">
-        <li ng-repeat="book in BookService.books | filter:book.title=searchBookFilter">
+        <li ng-repeat="book in BookService.books | filter:book.title=searchBookFilter | orderBy:'title'">
           <h4 class="book_title">{{ book.title }}</h4>
           <p class"book_author">{{ book.author }}</p>
         </li>
@@ -59,7 +59,7 @@
 
       <div class="movies_container">
         <ul class="movies">
-          <li class="movies" ng-repeat="movie in movies | beforeYearFilter:1983">
+          <li class="movies" ng-repeat="movie in movies | beforeYearFilter:1983 | orderBy:'-year'">
             <h4 class="movie_title">{{ movie.title }}</h4>
             <p class="movie_year">{{ movie.year }}</p>
           </li>
