@@ -1,0 +1,27 @@
+<h4>Book Service</h4>
+<div class="search_book_title_container">
+  <label for="search_book_title">Search Book Title:
+  </label>
+  <input type="text" id="search_book_title" ng-model="searchBookFilter">
+</div>
+
+  <ul class="books">
+    <li ng-repeat="book in BookService.books | filter:book.title=searchBookFilter | orderBy:'title'">
+      <h4 class="book_title">{{ book.title }}</h4>
+      <p class"book_author">{{ book.author }}</p>
+    </li>
+  </ul>
+
+<fieldset>
+  <div class="new_book_title">
+    <label for="new_book_title">Title</label>
+    <input id="new_book_title" type="text" ng-model="new_book.title" />
+  </div>
+  <div class="new_book_author">
+    <label for="new_book_author">Author</label>
+    <input id="new_book_author" type="text" ng-model="new_book.author" />
+  </div>
+  <div class="commit">
+    <button type="button" ng-click="BookService.addBook(new_book); new_book = null;">Add Book</button>
+  </div>
+</fieldset>

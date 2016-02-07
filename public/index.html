@@ -5,74 +5,23 @@
   <title>Hello Angular</title>
 </head>
 <body ng-app="myApp">
-  <h1>{{ "Hello" + " Angular"}}</h1>
-  <h2>{{ APP_VERSION }}</h2>
-  <div>
-    {{ 2 + 3 }}
-  </div>
+  <ul>
+    <li><a ng-href='/#/'>Home</a></li>
+    <li><a ng-href='/#/books'>Books</a></li>
+    <li><a ng-href='/#/movies'>Movies</a></li>
+    <li><a ng-href='/#/other'>Other</a></li>
+  </ul>
 
-  <div ng-controller="myController">
-    {{ myFirstName }}
+  <div ng-view> </div>
 
-    <div>
-      <input type="text" ng-model="myModel" />
-    </div>
-    <div>
-      {{ myModel }}
-    </div>
 
-    <div>
-      <h2>{{ mainCharacter }}</h2>
-    </div>
-
-    <div>
-      <h2>{{ characterVersionFactory }}</h2>
-    </div>
-
-    <div>
-      <h4>Book Service</h4>
-      <div class="search_book_title_container">
-        <label for="search_book_title">Search Book Title:
-        </label>
-        <input type="text" id="search_book_title" ng-model="searchBookFilter">
-      </div>
-      <ul class="books">
-        <li ng-repeat="book in BookService.books | filter:book.title=searchBookFilter | orderBy:'title'">
-          <h4 class="book_title">{{ book.title }}</h4>
-          <p class"book_author">{{ book.author }}</p>
-        </li>
-      </ul>
-
-      <fieldset>
-        <div class="new_book_title">
-          <label for="new_book_title">Title</label>
-          <input id="new_book_title" type="text" ng-model="new_book.title" />
-        </div>
-        <div class="new_book_author">
-          <label for="new_book_author">Author</label>
-          <input id="new_book_author" type="text" ng-model="new_book.author" />
-        </div>
-        <div class="commit">
-          <button type="button" ng-click="BookService.addBook(new_book); new_book = null;">Add Book</button>
-        </div>
-      </fieldset>
-
-      <div class="movies_container">
-        <ul class="movies">
-          <li class="movies" ng-repeat="movie in movies | beforeYearFilter:1983 | orderBy:'-year'">
-            <h4 class="movie_title">{{ movie.title }}</h4>
-            <p class="movie_year">{{ movie.year }}</p>
-          </li>
-        </ul>
-      </div>
-
-    </div>
-
-  </div>
 
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular-route.min.js"></script>
   <script type="text/javascript" src="js/myApp.js"></script>
-  <script type="text/javascript" src="js/controllers.js"></script>
+  <script type="text/javascript" src="js/controllers/movies-controller.js"></script>
+  <script type="text/javascript" src="js/controllers/books-controller.js"></script>
+  <script type="text/javascript" src="js/controllers/other-controller.js"></script>
   <script type="text/javascript" src="js/values.js"></script>
   <script type="text/javascript" src="js/constants.js"></script>
   <script type="text/javascript" src="js/factories.js"></script>
