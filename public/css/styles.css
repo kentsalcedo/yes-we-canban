@@ -1,0 +1,22 @@
+body {
+  background-color: gray;
+}
+
+#main {
+  margin: auto;
+}
+
+#newTask {
+  border: 1px solid white;
+  width: 100%;
+}
+
+.taskColumn {
+  width: 31%;
+  height: 70vh;
+  border: 1px solid white;
+  float: left;
+  margin: 10px;
+  text-align: center;
+}
+
