@@ -15,7 +15,8 @@ myApp
 
   $routeProvider
     .when('/',{
-      templateUrl : 'views/default.html'
+      templateUrl : 'views/default.html',
+      controller : 'TaskController'
     })
     .when('/tasks', {
       templateUrl  : 'views/tasks.html',

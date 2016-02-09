@@ -5,15 +5,6 @@
   <input type="text" id="search_book_title" ng-model="searchBookFilter">
 </div>
  -->
-  <ul class="books">
-    <li ng-repeat="task in TaskService.tasks | filter:task.title=searchtaskFilter | orderBy:'title'">
-      <h4 class="new_task_title">{{ task.title }}</h4>
-      <p class"new_task_desc">{{ task.desc }}</p>
-      <p class"new_task_priority">{{ task.priority }}</p>
-      <p class"new_task_createdBy">{{ task.createdBy }}</p>
-      <p class"new_task_assignedTo">{{ task.assignedTo }}</p>
-    </li>
-  </ul>
 
 <fieldset>
   <div class="new_task_title">
