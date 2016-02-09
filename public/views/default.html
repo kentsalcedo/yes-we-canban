@@ -2,21 +2,39 @@
 
 <div class="taskColumn">
   <div class="col-title">TO DO</div>
-    <ul class="books">
-    <li ng-repeat="task in TaskService.tasks | filter:task.title=searchtaskFilter | orderBy:'title'">
+    <ul class="singleTask">
+    <li ng-click="MoveTask(task)" ng-repeat="task in TaskService.toDo | filter:task.status=1 | orderBy:'title'">
       <h4 class="new_task_title">{{ task.title }}</h4>
-      <p class"new_task_desc">{{ task.desc }}</p>
-      <p class"new_task_priority">{{ task.priority }}</p>
-      <p class"new_task_createdBy">{{ task.createdBy }}</p>
-      <p class"new_task_assignedTo">{{ task.assignedTo }}</p>
+      <p class"new_task_desc">{{ "DESC: " + task.desc }}</p>
+      <p class"new_task_priority">{{ "PRIORITY: " + task.priority }}</p>
+      <p class"new_task_createdBy">{{ "CREATED BY: " + task.createdBy }}</p>
+      <p class"new_task_assignedTo">{{ "ASSIGNED TO: " + task.assignedTo }}</p>
     </li>
   </ul>
 </div>
 
 <div class="taskColumn">
   <div class="col-title">IN PROGRESS</div>
+    <ul class="singleTask" >
+    <li ng-click="MoveTask(task)" ng-repeat="task in TaskService.toDo | filter:task.status=2 | orderBy:'title' ">
+      <h4 class="new_task_title">{{ task.title }}</h4>
+      <p class"new_task_desc">{{ "DESC: " + task.desc }}</p>
+      <p class"new_task_priority">{{ "PRIORITY: " + task.priority }}</p>
+      <p class"new_task_createdBy">{{ "CREATED BY: " + task.createdBy }}</p>
+      <p class"new_task_assignedTo">{{ "ASSIGNED TO: " + task.assignedTo }}</p>
+    </li>
+  </ul>
 </div>
 
 <div class="taskColumn">
   <div class="col-title">DONE</div>
+    <ul class="singleTask" ng-click="">
+    <li ng-click="MoveTask(task)" ng-repeat="task in TaskService.toDo | filter:task.status=3 | orderBy:'title'">
+      <h4 class="new_task_title">{{ task.title }}</h4>
+      <p class"new_task_desc">{{ "DESC: " + task.desc }}</p>
+      <p class"new_task_priority">{{ "PRIORITY: " + task.priority }}</p>
+      <p class"new_task_createdBy">{{ "CREATED BY: " + task.createdBy }}</p>
+      <p class"new_task_assignedTo">{{ "ASSIGNED TO: " + task.assignedTo }}</p>
+    </li>
+  </ul>
 </div>
