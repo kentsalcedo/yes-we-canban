@@ -2,12 +2,12 @@
 (function(){
 // "use strict"
 
-  function BookService(){
-    this.books = [
+  function TaskService(){
+    this.tasks = [
       {
         id : 1,
-        title : 'Chaz Crying',
-        author : 'Chaz Lum'
+        title : 'get er done',
+        author : 'Kent'
       },
       {
         id : 2,
@@ -21,32 +21,32 @@
       }
     ];
 
-    this.getBooks = function(){
-      return this.books;
+    this.getTasks = function(){
+      return this.tasks;
     };
 
-    this.getBook = function(id){
-      return this.books.filter(function(book){ // returns array of books
-        return book.id === id; // boolean
+    this.getTask = function(id){
+      return this.tasks.filter(function(task){ // returns array of tasks
+        return task.id === id; // boolean
       })
-      .reduce(function(_,book){ // _ means you don't care about the first arg
-        return book;
+      .reduce(function(_,task){ // _ means you don't care about the first arg
+        return task;
       });
     };
 
-    this.addBook = function(book){
-      var nextId = this.books.length + 1;
-      book.id = nextId;
-      this.books.push({
+    this.addTask = function(task){
+      var nextId = this.tasks.length + 1;
+      task.id = nextId;
+      this.tasks.push({
         id : nextId,
-        title : book.title,
-        author : book.author
+        title : task.title,
+        author : task.author
       });
     };
 
   } // end of this function
 
   angular.module('myApp')
-    .service('BookService', BookService);
+    .service('TaskService', TaskService);
 
 })();

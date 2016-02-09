@@ -17,9 +17,9 @@ myApp
     .when('/',{
       templateUrl : 'views/default.html'
     })
-    .when('/books', {
-      templateUrl  : 'views/books.html',
-      controller : 'BooksController'
+    .when('/tasks', {
+      templateUrl  : 'views/tasks.html',
+      controller : 'TaskController'
     })
     .when('/movies', {
       templateUrl  : 'views/movies.html',
