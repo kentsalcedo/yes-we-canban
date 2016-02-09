@@ -25,10 +25,10 @@ myApp
       templateUrl  : 'views/404.html',
     });
 
-}])
-.run(['$rootScope', 'APP_VERSION', function($rootScope, APP_VERSION){
-  // initialize
-  // root scope is like global scope
-  $rootScope.APP_VERSION = APP_VERSION;
 }]);
+// .run(['$rootScope', 'APP_VERSION', function($rootScope, APP_VERSION){
+//   // initialize
+//   // root scope is like global scope
+//   // $rootScope.APP_VERSION = APP_VERSION;
+// }]);
 
