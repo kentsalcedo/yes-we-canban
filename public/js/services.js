@@ -44,7 +44,7 @@
         priority : task.priority,
         createdBy : task.createdBy,
         assignedTo : task.assignedTo,
-        status : 1
+        status : '__status__toDo__'
       });
     };
   } // end of this function

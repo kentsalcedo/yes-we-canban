@@ -5,8 +5,7 @@ angular.module('myApp', ['ngRoute', 'ngAnimate']);
 var myApp = angular.module('myApp');
 
 myApp
-.config(['MoviesProvider', '$routeProvider', '$locationProvider', function(MoviesProvider,$routeProvider, $locationProvider) {
-  MoviesProvider.setEndPoint('http://localhost:3001/api/movies');
+.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
 
   $locationProvider.html5Mode({
     enabled: true,
@@ -22,17 +21,8 @@ myApp
       templateUrl  : 'views/tasks.html',
       controller : 'TaskController'
     })
-    .when('/movies', {
-      templateUrl  : 'views/movies.html',
-      controller : 'MoviesController'
-    })
-    .when('/other', {
-      templateUrl  : 'views/other.html',
-      controller : 'OtherController'
-    })
     .otherwise({
       templateUrl  : 'views/404.html',
-
     });
 
 }])

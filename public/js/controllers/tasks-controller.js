@@ -5,8 +5,16 @@ angular.module('myApp')
   function ($scope, TaskService, MoveTask) {
     $scope.TaskService = TaskService;
 
-    $scope.MoveTask = function (task) {
-      task.status += 1;
-      // console.log("task", task.title);
-  };
+    $scope.MoveTaskInProgress = function (task) {
+      task.status = '__status__inProg__';
+    };
+
+    $scope.MoveTaskDone = function (task) {
+      task.status = '__status__done__';
+    };
+
+    $scope.MoveTaskOut = function (task) {
+      task.status = '__status__out__';
+    };
+
 }]);
