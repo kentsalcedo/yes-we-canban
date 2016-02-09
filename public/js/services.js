@@ -7,17 +7,10 @@
       {
         id : 1,
         title : 'get er done',
-        author : 'Kent'
-      },
-      {
-        id : 2,
-        title : 'Ray Laughing',
-        author : 'Kento Bento'
-      },
-      {
-        id : 3,
-        title : 'Outliers',
-        author : 'Malcom Gladwell'
+        desc : 'hello, hell yaaa mudddaaaaa',
+        priority : 'supa low',
+        createdBy : 'manang Riz',
+        assignedTo : 'Boyette-Boy'
       }
     ];
 
@@ -38,9 +31,12 @@
       var nextId = this.tasks.length + 1;
       task.id = nextId;
       this.tasks.push({
-        id : nextId,
+        // id : 1,
         title : task.title,
-        author : task.author
+        desc : task.desc,
+        priority : task.priority,
+        createdBy : task.createdBy,
+        assignedTo : task.assignedTo
       });
     };
 

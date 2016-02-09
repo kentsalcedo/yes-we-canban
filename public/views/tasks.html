@@ -7,21 +7,41 @@
  -->
   <ul class="books">
     <li ng-repeat="task in TaskService.tasks | filter:task.title=searchtaskFilter | orderBy:'title'">
-      <h4 class="task_title">{{ task.title }}</h4>
-      <p class"task_author">{{ task.author }}</p>
+      <h4 class="new_task_title">{{ task.title }}</h4>
+      <p class"new_task_desc">{{ task.desc }}</p>
+      <p class"new_task_priority">{{ task.priority }}</p>
+      <p class"new_task_createdBy">{{ task.createdBy }}</p>
+      <p class"new_task_assignedTo">{{ task.assignedTo }}</p>
     </li>
   </ul>
 
-<!-- <fieldset>
-  <div class="new_book_title">
-    <label for="new_book_title">Title</label>
-    <input id="new_book_title" type="text" ng-model="new_book.title" />
+<fieldset>
+  <div class="new_task_title">
+    <label for="new_task_title">New Task Title</label>
+    <input id="new_task_title" type="text" ng-model="new_task.title" />
   </div>
-  <div class="new_book_author">
-    <label for="new_book_author">Author</label>
-    <input id="new_book_author" type="text" ng-model="new_book.author" />
+
+  <div class="new_task_desc">
+    <label for="new_task_desc">Description</label>
+    <input id="new_task_desc" type="text" ng-model="new_task.desc" />
   </div>
+
+  <div class="new_task_priority">
+    <label for="new_task_priority">Priority</label>
+    <input id="new_task_priority" type="text" ng-model="new_task.priority" />
+  </div>
+
+  <div class="new_task_createdBy">
+    <label for="new_task_createdBy">Created By</label>
+    <input id="new_task_createdBy" type="text" ng-model="new_task.createdBy" />
+  </div>
+
+  <div class="new_task_assignedTo">
+    <label for="new_task_assignedTo">Assigned To</label>
+    <input id="new_task_assignedTo" type="text" ng-model="new_task.assignedTo" />
+  </div>
+
   <div class="commit">
-    <button type="button" ng-click="BookService.addBook(new_book); new_book = null;">Add Book</button>
+    <button type="button" ng-click="TaskService.addTask(new_task); new_task = null;">Add Task</button>
   </div>
-</fieldset> -->
+</fieldset>
