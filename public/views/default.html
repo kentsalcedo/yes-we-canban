@@ -2,14 +2,13 @@
 
 <div class="taskColumn">
   <div class="col-title">TO DO</div>
-    <div class="singleTask" ng-click="MoveTaskInProgress(task)" ng-repeat="task in TaskService.toDo | filter:task.status='__status__toDo__'">
+    <div class="singleTask" ng-click="MoveTaskInProgress(task)" ng-repeat="task in allTasks | filter:task.status='__status__toDo__'">
       <h4 class="new_task_title">{{ task.title }}</h4>
       <p class"new_task_desc">{{ "DESC: " + task.desc }}</p>
       <p class"new_task_priority">{{ "PRIORITY: " + task.priority }}</p>
       <p class"new_task_createdBy">{{ "CREATED BY: " + task.createdBy }}</p>
       <p class"new_task_assignedTo">{{ "ASSIGNED TO: " + task.assignedTo }}</p>
       <p class"new_task_status">{{ "STATUS: " + task.status }}</p>
-
   </div>
 </div>
 
