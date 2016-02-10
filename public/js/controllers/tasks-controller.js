@@ -12,9 +12,9 @@ angular.module('myApp')
         $scope.tasksArray = data;
       });
 
-    $scope.MoveTaskInProgress = function (task) {
-      console.log("consoleLogging", task);
-      // task.status = '__status__inProg__';
+    $scope.MoveTaskInProgress = function (data) {
+      // console.log("consoleLogging", data);
+      data.status = '__status__inProg__';
     };
 
     $scope.MoveTaskDone = function (task) {

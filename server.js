@@ -52,12 +52,11 @@ app.put('/api/update', function (req, res) {
 });
 
 app.delete('/api/delete', function (req, res) {
-  // res.redirect('/');
   return todos.find({ _id: req.body._id}).remove().exec();
 });
 
-app.get('*', function(req,res) {
- res.sendFile('/public/index.html', { root : __dirname });
+app.get('*', function (req,res) {
+  res.sendFile('/public/index.html', { root : __dirname });
 });
 
 

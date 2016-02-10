@@ -15,7 +15,7 @@
 
 <div class="taskColumn">
   <div class="col-title">IN PROGRESS</div>
-    <div class="singleTask" ng-click="MoveTaskDone(task)" ng-repeat="task in TaskService.toDo | filter:task.status='__status__inProg__'">
+    <div class="singleTask" ng-click="MoveTaskDone(task)" ng-repeat="task in tasksArray | filter:task.status='__status__inProg__'">
       <h4 class="new_task_title">{{ task.title }}</h4>
       <p class"new_task_desc">{{ "DESC: " + task.desc }}</p>
       <p class"new_task_priority">{{ "PRIORITY: " + task.priority }}</p>
@@ -28,7 +28,7 @@
 
 <div class="taskColumn">
   <div class="col-title">DONE</div>
-    <div class="singleTask" ng-click="MoveTaskOut(task)" ng-repeat="task in TaskService.toDo | filter:task.status='__status__done__'">
+    <div class="singleTask" ng-click="MoveTaskOut(task)" ng-repeat="task in tasksArray | filter:task.status='__status__done__'">
       <h4 class="new_task_title">{{ task.title }}</h4>
       <p class"new_task_desc">{{ "DESC: " + task.desc }}</p>
       <p class"new_task_priority">{{ "PRIORITY: " + task.priority }}</p>
