@@ -43,15 +43,17 @@ app.post('/api/add', function (req, res) {
   }).save();
 });
 
-// app.put('/api/id/tasks', function (req, res) {
-//   // console.log("consoleLogging", req.title);
-//   res.json(Mongoose);
-// });
+app.put('/api/update', function (req, res) {
+  return todos.findOneAndUpdate({ _id : req.body._id },
+    { $set : res }, { new: true }, function(){
+      console.log("updated");
+    });
+});
 
-// app.delete('/api/id/tasks', function (req, res) {
-//   // console.log("consoleLogging", req.title);
-//   res.json(Mongoose);
-// });
+app.delete('/api/delete', function (req, res) {
+  // res.redirect('/');
+  return todos.find({ _id: req.body._id}).remove().exec();
+});
 
 app.get('*', function(req,res) {
  res.sendFile('/public/index.html', { root : __dirname });
