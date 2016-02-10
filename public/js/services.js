@@ -1,22 +1,8 @@
 angular.module('myApp')
-  .service('TaskService', [ '$http',
-
-  function TaskService () {
-    this.toDo = [];
-    this.endpoint = '';
-    this.setEndPoint = function (endpoint) {
-      this.endpoint = endpoint;
+  .service('TaskService', [ '$http', function ($http) {
+    this.allTasks = function () {
+      return $http.get('/api');
     };
-
-    this.$get = ['$http', function ($http) {
-      var endpoint = this.endpoint;
-
-      return {
-        get : function(){
-          return $http.get('/api');
-        }
-      };
-    }];
 
     // this.getToDoTasks = function (req) {
     //   return this.toDo;
