@@ -5,6 +5,11 @@ angular.module('myApp')
   function ($http, $scope, TaskService, MoveTask) {
     $scope.TaskService = TaskService;
 
+    $scope.addTask = function(newTask){
+      console.log("consoleLogging controller", $scope.new_task);
+      TaskService.addTask($scope.new_task);
+    }
+
     $scope.tasksArray = [];
 
     TaskService.allTasks()
@@ -24,10 +29,4 @@ angular.module('myApp')
     $scope.MoveTaskOut = function (task) {
       task.status = '__status__out__';
     };
-
-    // $http.get('todo/all').success( function (data) {
-    //   console.log("consoleLogging");
-    //   // $scope.allTasks = data;
-    // });
-
 }]);
