@@ -26,9 +26,5 @@ myApp
     });
 
 }]);
-// .run(['$rootScope', 'APP_VERSION', function($rootScope, APP_VERSION){
-//   // initialize
-//   // root scope is like global scope
-//   // $rootScope.APP_VERSION = APP_VERSION;
-// }]);
+
 
