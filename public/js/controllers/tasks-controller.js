@@ -1,9 +1,14 @@
-"use strict"
+// "use strict"
 
 angular.module('myApp')
 .controller('TaskController', ['$http','$scope','TaskService',
   function ($http, $scope, TaskService, MoveTask) {
     $scope.TaskService = TaskService;
+
+    $scope.addTask = function(newTask){
+      console.log("consoleLogging controller", $scope.new_task);
+      TaskService.addTask($scope.new_task);
+    };
 
     $scope.tasksArray = [];
 
@@ -12,9 +17,9 @@ angular.module('myApp')
         $scope.tasksArray = data;
       });
 
-    $scope.MoveTaskInProgress = function (task) {
-      console.log("consoleLogging", task);
-      // task.status = '__status__inProg__';
+    $scope.MoveTaskInProgress = function (data) {
+      // console.log("consoleLogging", data);
+      data.status = '__status__inProg__';
     };
 
     $scope.MoveTaskDone = function (task) {
@@ -24,10 +29,4 @@ angular.module('myApp')
     $scope.MoveTaskOut = function (task) {
       task.status = '__status__out__';
     };
-
-    // $http.get('todo/all').success( function (data) {
-    //   console.log("consoleLogging");
-    //   // $scope.allTasks = data;
-    // });
-
 }]);

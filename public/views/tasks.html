@@ -5,34 +5,36 @@
   <input type="text" id="search_book_title" ng-model="searchBookFilter">
 </div>
  -->
+<form ng-submit="addTask()">
+  <fieldset>
+    <div class="new_task_title">
+      <label for="new_task_title">New Task Title</label>
+      <input id="new_task_title" type="text" ng-model="new_task.title" />
+    </div>
 
-<fieldset>
-  <div class="new_task_title">
-    <label for="new_task_title">New Task Title</label>
-    <input id="new_task_title" type="text" ng-model="new_task.title" />
-  </div>
+    <div class="new_task_desc">
+      <label for="new_task_desc">Description</label>
+      <input id="new_task_desc" type="text" ng-model="new_task.desc" />
+    </div>
 
-  <div class="new_task_desc">
-    <label for="new_task_desc">Description</label>
-    <input id="new_task_desc" type="text" ng-model="new_task.desc" />
-  </div>
+    <div class="new_task_priority">
+      <label for="new_task_priority">Priority</label>
+      <input id="new_task_priority" type="text" ng-model="new_task.priority" />
+    </div>
 
-  <div class="new_task_priority">
-    <label for="new_task_priority">Priority</label>
-    <input id="new_task_priority" type="text" ng-model="new_task.priority" />
-  </div>
+    <div class="new_task_createdBy">
+      <label for="new_task_createdBy">Created By</label>
+      <input id="new_task_createdBy" type="text" ng-model="new_task.createdBy" />
+    </div>
 
-  <div class="new_task_createdBy">
-    <label for="new_task_createdBy">Created By</label>
-    <input id="new_task_createdBy" type="text" ng-model="new_task.createdBy" />
-  </div>
+    <div class="new_task_assignedTo">
+      <label for="new_task_assignedTo">Assigned To</label>
+      <input id="new_task_assignedTo" type="text" ng-model="new_task.assignedTo" />
+    </div>
 
-  <div class="new_task_assignedTo">
-    <label for="new_task_assignedTo">Assigned To</label>
-    <input id="new_task_assignedTo" type="text" ng-model="new_task.assignedTo" />
-  </div>
-
-  <div class="commit">
-    <button type="button" ng-click="TaskService.addToDoTask(new_task); new_task = null;">Add Task</button>
-  </div>
-</fieldset>
+    <div class="commit">
+      <button type="submit">Add Task</button>
+      <!-- <button type="button" ng-click="addTask(new_task); new_task = null;">Add Task</button> -->
+    </div>
+  </fieldset>
+</form>

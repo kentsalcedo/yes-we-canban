@@ -31,7 +31,6 @@ app.get('/api', function (req, res) {
 });
 
 app.post('/api/add', function (req, res) {
-  res.redirect('/');
 
   return new todos({
     title     : req.body.title,
@@ -51,12 +50,31 @@ app.put('/api/update', function (req, res) {
 });
 
 app.delete('/api/delete', function (req, res) {
-  // res.redirect('/');
+  console.log("consoleLogging server", req.body);
+  return new todos({
+    title     : req.body.title,
+    desc      : req.body.desc,
+    priority  : req.body.priority,
+    createdBy : req.body.createdBy,
+    assignedTo: req.body.assignedTo
+    // status    : "__status__toDo__"
+  }).save();
+});
+
+app.put('/api/update', function (req, res) {
+  // console.log("consoleLogging", req.body._id);
+  return todos.findOneAndUpdate({ _id : req.body._id },
+    { $set : { desc : req.body.desc } }, { new: true }, function(){
+      console.log("updated");
+    });
+});
+
+app.delete('/api/delete', function (req, res) {
   return todos.find({ _id: req.body._id}).remove().exec();
 });
 
-app.get('*', function(req,res) {
- res.sendFile('/public/index.html', { root : __dirname });
+app.get('*', function (req,res) {
+  res.sendFile('/public/index.html', { root : __dirname });
 });
 
 

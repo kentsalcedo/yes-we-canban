@@ -2,19 +2,25 @@
 
 <div class="taskColumn">
   <div class="col-title">TO DO</div>
-    <div class="singleTask" ng-click="MoveTaskInProgress(task)" ng-repeat="task in tasksArray | filter:task.status='__status__toDo__'">
+    <div class="singleTask"  ng-repeat="task in tasksArray | filter:task.status='__status__toDo__'">
       <h4 class="new_task_title">{{ task.title }}</h4>
       <p class"new_task_desc">{{ "DESC: " + task.desc }}</p>
       <p class"new_task_priority">{{ "PRIORITY: " + task.priority }}</p>
       <p class"new_task_createdBy">{{ "CREATED BY: " + task.createdBy }}</p>
       <p class"new_task_assignedTo">{{ "ASSIGNED TO: " + task.assignedTo }}</p>
       <p class"new_task_status">{{ "STATUS: " + task.status }}</p>
+
+      <div class="commit">
+        <button type="button" ng-click="">Delete</button>
+        <button type="button" ng-click="MoveTaskInProgress(task)">>>></button>
+      </div>
+
   </div>
 </div>
 
 <div class="taskColumn">
   <div class="col-title">IN PROGRESS</div>
-    <div class="singleTask" ng-click="MoveTaskDone(task)" ng-repeat="task in TaskService.toDo | filter:task.status='__status__inProg__'">
+    <div class="singleTask" ng-repeat="task in tasksArray | filter:task.status='__status__inProg__'">
       <h4 class="new_task_title">{{ task.title }}</h4>
       <p class"new_task_desc">{{ "DESC: " + task.desc }}</p>
       <p class"new_task_priority">{{ "PRIORITY: " + task.priority }}</p>
@@ -22,12 +28,16 @@
       <p class"new_task_assignedTo">{{ "ASSIGNED TO: " + task.assignedTo }}</p>
       <p class"new_task_status">{{ "STATUS: " + task.status }}</p>
 
+      <div class="commit">
+        <button type="button" ng-click="">Delete</button>
+        <button type="button" ng-click="MoveTaskDone(task)">>>></button>
+      </div>
   </div>
 </div>
 
 <div class="taskColumn">
   <div class="col-title">DONE</div>
-    <div class="singleTask" ng-click="MoveTaskOut(task)" ng-repeat="task in TaskService.toDo | filter:task.status='__status__done__'">
+    <div class="singleTask" ng-repeat="task in tasksArray | filter:task.status='__status__done__'">
       <h4 class="new_task_title">{{ task.title }}</h4>
       <p class"new_task_desc">{{ "DESC: " + task.desc }}</p>
       <p class"new_task_priority">{{ "PRIORITY: " + task.priority }}</p>
@@ -35,5 +45,8 @@
       <p class"new_task_assignedTo">{{ "ASSIGNED TO: " + task.assignedTo }}</p>
       <p class"new_task_status">{{ "STATUS: " + task.status }}</p>
 
+      <div class="commit">
+        <button type="button" ng-click="MoveTaskOut(task)">Clear</button>
+      </div>
   </div>
 </div>
