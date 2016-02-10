@@ -5,15 +5,16 @@ angular.module('myApp')
   function ($http, $scope, TaskService, MoveTask) {
     $scope.TaskService = TaskService;
 
-    $scope.allTasks = [];
+    $scope.tasksArray = [];
 
-    TaskService.get()
+    TaskService.allTasks()
       .success(function (data) {
-        $scope.allTasks = data;
+        $scope.tasksArray = data;
       });
 
     $scope.MoveTaskInProgress = function (task) {
-      task.status = '__status__inProg__';
+      console.log("consoleLogging", task);
+      // task.status = '__status__inProg__';
     };
 
     $scope.MoveTaskDone = function (task) {
