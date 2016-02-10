@@ -7,10 +7,10 @@ angular.module('myApp')
 
     this.addTask = function (newTask) {
       console.log("consoleLogging service", newTask);
-      var data = {
-        json : JSON.stringify(newTask)
-      };
-      return $http.post('/api/add', data);
+      // var data = {
+      //   json : JSON.stringify(newTask)
+      // };
+      return $http.post('/api/add', newTask);
     };
 
     this.updateTask = function () {

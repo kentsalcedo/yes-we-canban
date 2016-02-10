@@ -18,7 +18,6 @@ angular.module('myApp')
       });
 
     $scope.MoveTaskInProgress = function (data) {
-      // console.log("consoleLogging", data);
       data.status = '__status__inProg__';
     };
 

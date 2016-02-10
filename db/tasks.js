@@ -26,11 +26,4 @@ module.exports = (function () {
     }).save();
   }
 
-  return {
-    all         : _all,
-    getToDoTasks: _add,
-    getById     : _getById,
-    editById    : _editById,
-    deleteById  : _deleteById
-  };
 })();
