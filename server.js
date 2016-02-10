@@ -44,8 +44,9 @@ app.post('/api/add', function (req, res) {
 });
 
 app.put('/api/update', function (req, res) {
+  console.log("consoleLogging", req.body._id);
   return todos.findOneAndUpdate({ _id : req.body._id },
-    { $set : res }, { new: true }, function(){
+    { $set : { desc : req.body.desc } }, { new: true }, function(){
       console.log("updated");
     });
 });
