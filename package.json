@@ -11,7 +11,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "angular-xeditable-npm": "^0.1.9",
     "body-parser": "^1.14.2",
+    "bootstrap": "^3.3.6",
     "express": "^4.13.4",
     "gulp": "^3.9.1",
     "mongodb": "^2.1.7",
