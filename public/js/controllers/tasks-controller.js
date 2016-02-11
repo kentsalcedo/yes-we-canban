@@ -7,6 +7,11 @@ angular.module('myApp')
 
     $scope.tasksArray = [];
 
+    TaskService.allTasks()
+      .success(function (data) {
+        $scope.tasksArray = data;
+      });
+
     $scope.addTask = function (newTask) {
       TaskService.addTask($scope.new_task)
         .success(function (data) {
@@ -20,12 +25,6 @@ angular.module('myApp')
         });
     };
 
-
-    TaskService.allTasks()
-      .success(function (data) {
-        $scope.tasksArray = data;
-      });
-
     $scope.deleteTask = function (taskId) {
       TaskService.deleteTask(taskId)
       .success(function (data) {
@@ -34,13 +33,16 @@ angular.module('myApp')
           $location.path('/');
         });
       })
-      .catch(function() {
+      .catch(function (err) {
+        console.error(err);
+
       });
     };
 
     //will pass data to service
-    $scope.MoveTaskInProgress = function (newStatus, id) {
-      TaskService.updateTask(newStatus, id);
+    $scope.MoveTaskInProgress = function (task) {
+      task.status = '__status__inProgress__';
+      // TaskService.updateTask(newStatus, id);
     };
 
     $scope.MoveTaskDone = function (task) {

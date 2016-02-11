@@ -25,6 +25,14 @@ myApp
       templateUrl : '/views/default.html',
       controller : 'TaskController'
     })
+    .when('/login', {
+      templateUrl : 'views/login.html',
+      controller : 'TaskController'
+    })
+    .when('/register', {
+      templateUrl : 'views/register.html',
+      controller : 'TaskController'
+    })
     .otherwise({
       templateUrl  : 'views/404.html',
     });
