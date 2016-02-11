@@ -5,10 +5,10 @@
     <div class="singleTask" ng-repeat="task in tasksArray | filter:task.status='__status__toDo__'">
 
       <h2 class="new_task_title" editable-text="task.title">{{ task.title }}</h2>
-      <p class"new_task_desc">{{ "DESC: " + task.desc }}</p>
-      <p class"new_task_priority">{{ "PRIORITY: " + task.priority }}</p>
-      <p class"new_task_createdBy">{{ "CREATED BY: " + task.createdBy }}</p>
-      <p class"new_task_assignedTo">{{ "ASSIGNED TO: " + task.assignedTo }}</p>
+      <p class"new_task_desc" editable-text="task.desc">{{ "DESC: " + task.desc }}</p>
+      <p class"new_task_priority" editable-text="task.priority">{{ "PRIORITY: " + task.priority }}</p>
+      <p class"new_task_createBy" editable-text="task.createBy">{{ "CREATED BY: " + task.createdBy }}</p>
+      <p class"new_task_assignedTo" editable-text="task.assignedTo">{{ "ASSIGNED TO: " + task.assignedTo }}</p>
       <div class="commit">
 
         <!-- <form action=""> -->
