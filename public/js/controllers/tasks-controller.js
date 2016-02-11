@@ -7,7 +7,7 @@ angular.module('myApp')
 
     $scope.tasksArray = [];
 
-    $scope.addTask = function(newTask){
+    $scope.addTask = function (newTask) {
       TaskService.addTask($scope.new_task)
         .success(function (data) {
           TaskService.allTasks().success(function (allTasks) {
@@ -15,7 +15,8 @@ angular.module('myApp')
             $location.path('/');
           });
         })
-        .catch(function(){
+        .catch(function (err) {
+          console.error(err);
         });
     };
 
@@ -33,7 +34,7 @@ angular.module('myApp')
           $location.path('/');
         });
       })
-      .catch(function(){
+      .catch(function() {
       });
     };
 

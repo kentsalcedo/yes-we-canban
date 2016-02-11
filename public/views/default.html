@@ -1,16 +1,14 @@
-<h1>YES WE CANBAN</h1>
+<!-- <h1>YES WE CANBAN</h1> -->
 
 <div class="taskColumn">
   <div class="col-title">TO DO</div>
-    <div class="singleTask"  ng-repeat="task in tasksArray | filter:task.status='__status__toDo__'">
+    <div class="singleTask" ng-repeat="task in tasksArray | filter:task.status='__status__toDo__'">
 
-      <h4 class="new_task_title">{{ task.title }}</h4>
+      <h2 class="new_task_title" editable-text="task.title">{{ task.title }}</h2>
       <p class"new_task_desc">{{ "DESC: " + task.desc }}</p>
       <p class"new_task_priority">{{ "PRIORITY: " + task.priority }}</p>
       <p class"new_task_createdBy">{{ "CREATED BY: " + task.createdBy }}</p>
       <p class"new_task_assignedTo">{{ "ASSIGNED TO: " + task.assignedTo }}</p>
-      <p class"new_task_status">{{ "STATUS: " + task.status }}</p>
-
       <div class="commit">
 
         <!-- <form action=""> -->

@@ -6,7 +6,6 @@ var db         = require('./db/mongo');
 var bodyParser = require('body-parser');
 var Mongoose   = require('mongoose');
 
-// app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 var tasksSchema = Mongoose.Schema ({
@@ -47,7 +46,6 @@ app.post('/api/add', function (req, res) {
 app.delete('/api/delete/:id', function (req, res) {
   todos.find({ _id: req.params.id}).remove().exec()
   .then(function (data) {
-    console.log('HELLLLLLLL',data);
     return res.json( data );
   })
   .catch(function (err) {
@@ -61,15 +59,6 @@ app.put('/api/update', function (req, res) {
       console.log("updated");
     });
 });
-
-app.put('/api/update', function (req, res) {
-  // console.log("consoleLogging", req.body._id);
-  return todos.findOneAndUpdate({ _id : req.body._id },
-    { $set : { status : req.body.status } }, { new: true }, function(){
-      console.log(req.body.status);
-    });
-});
-
 
 app.get('*', function (req,res) {
   res.sendFile('/public/index.html', { root : __dirname });

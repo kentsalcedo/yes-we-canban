@@ -3,15 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <title>Yes We CanBan</title>
-  <!-- <link rel="stylesheet" href="/css/animation.css"> -->
+  <link rel="stylesheet" href="/css/animation.css">
   <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body ng-app="myApp">
   <div id="navbar">
-    <ul>
+<!--     <ul>
       <li><a ng-href='/#/'>Home</a></li>
       <li><a ng-href='/#/tasks'>New Task</a></li>
-    </ul>
+    </ul> -->
+    <div class="nav-home"><a ng-href='/#/'>home</a></div>
+    <div class="nav-addtask"><a ng-href='/#/tasks'>+</a></div>
+    <div class="nav-login"><a ng-href='/login'>login</a></div>
+
   </div>
 
   <div ng-view></div>
@@ -19,6 +23,7 @@
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular-route.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-xeditable/0.1.9/js/xeditable.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular-animate.min.js"></script>
   <script type="text/javascript" src="js/myApp.js"></script>
   <script type="text/javascript" src="js/controllers/tasks-controller.js"></script>

@@ -1,6 +1,6 @@
 // this defines module since it is taking 2 arguments
 // external dependencies go inside the []
-angular.module('myApp', ['ngRoute', 'ngAnimate']);
+angular.module('myApp', ['ngRoute', 'ngAnimate','xeditable']);
 
 var myApp = angular.module('myApp');
 
@@ -13,7 +13,7 @@ myApp
   });
 
   $routeProvider
-    .when('/',{
+    .when('/', {
       templateUrl : 'views/default.html',
       controller : 'TaskController'
     })
@@ -29,4 +29,7 @@ myApp
       templateUrl  : 'views/404.html',
     });
 
-}]);
+}])
+.run(function (editableOptions) {
+  editableOptions.theme = 'bs3';
+});
