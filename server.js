@@ -5,6 +5,7 @@ var PORT       = process.env.PORT || 3001;
 var db         = require('./db/mongo');
 var bodyParser = require('body-parser');
 var Mongoose   = require('mongoose');
+var bcrypt     = require('bcrypt');
 
 app.use(bodyParser.json());
 
@@ -74,10 +75,12 @@ var usersSchema = Mongoose.Schema ({
 var users = Mongoose.model('users', usersSchema);
 
 app.post('/api/register', function (req, res) {
-  console.log("consoleLogging", req);
+  var salt = bcrypt.genSaltSync(10);
+  var hash = bcrypt.hashSync(req.body.password, salt);
+
   new users({
     username : req.body.username,
-    password : req.body.password
+    password : hash
   }).save();
     return res.send('/login');
 });
