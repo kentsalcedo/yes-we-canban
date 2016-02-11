@@ -1,16 +1,24 @@
 // "use strict"
 
 angular.module('myApp')
-.controller('TaskController', ['$window','$http','$scope','TaskService',
-  function ($window, $http, $scope, TaskService, MoveTask) {
+.controller('TaskController', ['$location','$http','$scope','TaskService',
+  function ($location, $http, $scope, TaskService, MoveTask) {
     $scope.TaskService = TaskService;
 
+    $scope.tasksArray = [];
+
     $scope.addTask = function(newTask){
-      console.log("consoleLogging controller", $scope.new_task);
-      TaskService.addTask($scope.new_task);
+      TaskService.addTask($scope.new_task)
+        .success(function (data) {
+          TaskService.allTasks().success(function (allTasks) {
+            $scope.tasksArray = allTasks;
+            $location.path('/');
+          });
+        })
+        .catch(function(){
+        });
     };
 
-    $scope.tasksArray = [];
 
     TaskService.allTasks()
       .success(function (data) {
@@ -18,10 +26,14 @@ angular.module('myApp')
       });
 
     $scope.deleteTask = function (taskId) {
-      console.log("TASK ID task controller", taskId);
       TaskService.deleteTask(taskId)
-      .success(function(data){
-        window.location.replace('/');
+      .success(function (data) {
+        TaskService.allTasks().success(function (allTasks) {
+          $scope.tasksArray = allTasks;
+          $location.path('/');
+        });
+      })
+      .catch(function(){
       });
     };
 

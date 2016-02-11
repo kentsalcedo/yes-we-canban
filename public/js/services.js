@@ -14,7 +14,6 @@ angular.module('myApp')
     };
 
     this.deleteTask = function (taskId) {
-      console.log("TASK ID task service", taskId);
       return $http.delete('/api/delete/' + taskId );
     };
   } // end of this function

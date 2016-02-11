@@ -30,17 +30,18 @@ app.get('/api', function (req, res) {
 });
 
 app.post('/api/add', function (req, res) {
-  return new todos({
+  new todos({
     title     : req.body.title,
     desc      : req.body.desc,
     priority  : req.body.priority,
     createdBy : req.body.createdBy,
     assignedTo: req.body.assignedTo,
     status    : "__status__toDo__"
-  }).save()
-    .then(function (data) {
-      return res.json( data );
-    });
+  }).save();
+    // .then(function (data) {
+      // console.log('redirect');
+      return res.send('/');
+    // });
 });
 
 app.delete('/api/delete/:id', function (req, res) {
