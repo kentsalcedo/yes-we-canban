@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "angular-xeditable-npm": "^0.1.9",
+    "bcrypt": "^0.8.5",
     "body-parser": "^1.14.2",
     "bootstrap": "^3.3.6",
     "express": "^4.13.4",

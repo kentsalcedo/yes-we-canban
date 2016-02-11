@@ -4,18 +4,17 @@
   <div class="col-title">TO DO</div>
     <div class="singleTask" ng-repeat="task in tasksArray | filter:task.status='__status__toDo__'">
 
+      <button type="button" ng-click="deleteTask(task._id)" class="delete-button">x</button>
+
       <h2 class="new_task_title" editable-text="task.title">{{ task.title }}</h2>
       <p class"new_task_desc" editable-text="task.desc">{{ "DESC: " + task.desc }}</p>
       <p class"new_task_priority" editable-text="task.priority">{{ "PRIORITY: " + task.priority }}</p>
-      <p class"new_task_createBy" editable-text="task.createBy">{{ "CREATED BY: " + task.createdBy }}</p>
+      <p class"new_task_createBy" editable-text="task.createdBy">{{ "CREATED BY: " + task.createdBy }}</p>
       <p class"new_task_assignedTo" editable-text="task.assignedTo">{{ "ASSIGNED TO: " + task.assignedTo }}</p>
+      <p class"new_task_status" editable-text="task.status">{{ "ASSIGNED TO: " + task.status }}</p>
+
       <div class="commit">
-
-        <!-- <form action=""> -->
-          <button type="button" ng-click="">Edit</button>
-        <!-- </form> -->
-
-        <button type="button" ng-click="deleteTask(task._id)">Delete</button>
+        <!-- <button type="button" ng-click="">Edit</button> -->
         <button type="button" ng-click="MoveTaskInProgress(task)">>>></button>
       </div>
 
@@ -25,7 +24,8 @@
 <div class="taskColumn">
   <div class="col-title">IN PROGRESS</div>
     <div class="singleTask" ng-repeat="task in tasksArray | filter:task.status='__status__inProg__'">
-      <h4 class="new_task_title">{{ task.title }}</h4>
+      <button type="button" ng-click="deleteTask(task._id)" class="delete-button">x</button>
+      <h2 class="new_task_title">{{ task.title }}</h4>
       <p class"new_task_desc">{{ "DESC: " + task.desc }}</p>
       <p class"new_task_priority">{{ "PRIORITY: " + task.priority }}</p>
       <p class"new_task_createdBy">{{ "CREATED BY: " + task.createdBy }}</p>
@@ -33,8 +33,8 @@
       <p class"new_task_status">{{ "STATUS: " + task.status }}</p>
 
       <div class="commit">
-        <button type="button" ng-click="">Edit</button>
-        <button type="button" ng-click="">Delete</button>
+        <button type="button" ng-click="MoveTaskToDo(task)"><<<</button>
+        <!-- <button type="button" ng-click="">Edit</button> -->
         <button type="button" ng-click="MoveTaskDone(task)">>>></button>
       </div>
   </div>
@@ -43,7 +43,8 @@
 <div class="taskColumn">
   <div class="col-title">DONE</div>
     <div class="singleTask" ng-repeat="task in tasksArray | filter:task.status='__status__done__'">
-      <h4 class="new_task_title">{{ task.title }}</h4>
+      <button type="button" ng-click="deleteTask(task._id)" class="delete-button">x</button>
+      <h2 class="new_task_title">{{ task.title }}</h4>
       <p class"new_task_desc">{{ "DESC: " + task.desc }}</p>
       <p class"new_task_priority">{{ "PRIORITY: " + task.priority }}</p>
       <p class"new_task_createdBy">{{ "CREATED BY: " + task.createdBy }}</p>
@@ -51,7 +52,8 @@
       <p class"new_task_status">{{ "STATUS: " + task.status }}</p>
 
       <div class="commit">
-        <button type="button" ng-click="MoveTaskOut(task)">Clear</button>
+        <button type="button" ng-click="MoveTaskInProgress(task)"><<<</button>
+        <!-- <button type="button" ng-click="MoveTaskOut(task)">x</button> -->
       </div>
   </div>
 </div>

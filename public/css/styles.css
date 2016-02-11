@@ -8,7 +8,7 @@
   box-sizing: border-box; }
 
 body {
-  background-color: gray;
+  /*background-color: gray;*/
   margin: 0px;
   padding: 0px;
   font-family: Dosis; }
@@ -72,6 +72,7 @@ a:hover {
   width: 100%; }
 
 .taskColumn {
+  background-color: gray;
   width: 31%;
   min-height: 75vh;
   height: 100%;
@@ -90,6 +91,7 @@ a:hover {
   font-family: Montserrat; }
 
 .singleTask {
+  background-color: white;
   border: 1px solid white;
   margin: 15px;
   padding: 0px 10px 10px 10px;
@@ -104,6 +106,11 @@ a:hover {
 
 .formTask {
   margin-top: 100px; }
+
+.delete-button {
+  float: right;
+  margin-top: 10px;
+}
 
 .loginDiv {
   margin-top: 100px;

@@ -10,6 +10,7 @@ angular.module('myApp')
     };
 
     this.updateTask = function (data) {
+      console.log('services: ', data);
       return $http.put('/api/update', data);
     };
 
