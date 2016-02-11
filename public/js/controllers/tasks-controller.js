@@ -1,8 +1,8 @@
 // "use strict"
 
 angular.module('myApp')
-.controller('TaskController', ['$http','$scope','TaskService',
-  function ($http, $scope, TaskService, MoveTask) {
+.controller('TaskController', ['$window','$http','$scope','TaskService',
+  function ($window, $http, $scope, TaskService, MoveTask) {
     $scope.TaskService = TaskService;
 
     $scope.addTask = function(newTask){
@@ -17,8 +17,17 @@ angular.module('myApp')
         $scope.tasksArray = data;
       });
 
-    $scope.MoveTaskInProgress = function (data) {
-      data.status = '__status__inProg__';
+    $scope.deleteTask = function (taskId) {
+      console.log("TASK ID task controller", taskId);
+      TaskService.deleteTask(taskId)
+      .success(function(data){
+        window.location.replace('/');
+      });
+    };
+
+    //will pass data to service
+    $scope.MoveTaskInProgress = function (newStatus, id) {
+      TaskService.updateTask(newStatus, id);
     };
 
     $scope.MoveTaskDone = function (task) {

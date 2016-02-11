@@ -37,7 +37,21 @@ app.post('/api/add', function (req, res) {
     createdBy : req.body.createdBy,
     assignedTo: req.body.assignedTo,
     status    : "__status__toDo__"
-  }).save();
+  }).save()
+    .then(function (data) {
+      return res.json( data );
+    });
+});
+
+app.delete('/api/delete/:id', function (req, res) {
+  todos.find({ _id: req.params.id}).remove().exec()
+  .then(function (data) {
+    console.log('HELLLLLLLL',data);
+    return res.json( data );
+  })
+  .catch(function (err) {
+    console.error(err);
+  });
 });
 
 app.put('/api/update', function (req, res) {
@@ -47,27 +61,14 @@ app.put('/api/update', function (req, res) {
     });
 });
 
-app.delete('/api/delete', function (req, res) {
-  return new todos({
-    title     : req.body.title,
-    desc      : req.body.desc,
-    priority  : req.body.priority,
-    createdBy : req.body.createdBy,
-    assignedTo: req.body.assignedTo
-  }).save();
-});
-
 app.put('/api/update', function (req, res) {
   // console.log("consoleLogging", req.body._id);
   return todos.findOneAndUpdate({ _id : req.body._id },
-    { $set : { desc : req.body.desc } }, { new: true }, function(){
-      console.log("updated");
+    { $set : { status : req.body.status } }, { new: true }, function(){
+      console.log(req.body.status);
     });
 });
 
-app.delete('/api/delete', function (req, res) {
-  return todos.find({ _id: req.body._id}).remove().exec();
-});
 
 app.get('*', function (req,res) {
   res.sendFile('/public/index.html', { root : __dirname });

@@ -21,6 +21,10 @@ myApp
       templateUrl  : 'views/tasks.html',
       controller : 'TaskController'
     })
+    .when('/api/add', {
+      templateUrl : '/views/default.html',
+      controller : 'TaskController'
+    })
     .otherwise({
       templateUrl  : 'views/404.html',
     });

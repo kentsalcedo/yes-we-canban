@@ -6,19 +6,16 @@ angular.module('myApp')
     };
 
     this.addTask = function (newTask) {
-      console.log("consoleLogging service", newTask);
-      // var data = {
-      //   json : JSON.stringify(newTask)
-      // };
       return $http.post('/api/add', newTask);
     };
 
-    this.updateTask = function () {
-      return $http.put('/api/update');
+    this.updateTask = function (data) {
+      return $http.put('/api/update', data);
     };
 
-    this.deleteTask = function () {
-      return $http.delete('/api/delete');
+    this.deleteTask = function (taskId) {
+      console.log("TASK ID task service", taskId);
+      return $http.delete('/api/delete/' + taskId );
     };
   } // end of this function
 

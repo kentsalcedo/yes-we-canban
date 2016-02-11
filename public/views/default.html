@@ -3,6 +3,7 @@
 <div class="taskColumn">
   <div class="col-title">TO DO</div>
     <div class="singleTask"  ng-repeat="task in tasksArray | filter:task.status='__status__toDo__'">
+
       <h4 class="new_task_title">{{ task.title }}</h4>
       <p class"new_task_desc">{{ "DESC: " + task.desc }}</p>
       <p class"new_task_priority">{{ "PRIORITY: " + task.priority }}</p>
@@ -11,8 +12,13 @@
       <p class"new_task_status">{{ "STATUS: " + task.status }}</p>
 
       <div class="commit">
-        <button type="button" ng-click="">Delete</button>
-        <button type="button" ng-click="MoveTaskInProgress(task)">>>></button>
+
+        <!-- <form action=""> -->
+          <button type="button" ng-click="">Edit</button>
+        <!-- </form> -->
+
+        <button type="button" ng-click="deleteTask(task._id)">Delete</button>
+        <button type="button" ng-click="MoveTaskInProgress( )">>>></button>
       </div>
 
   </div>
@@ -29,6 +35,7 @@
       <p class"new_task_status">{{ "STATUS: " + task.status }}</p>
 
       <div class="commit">
+        <button type="button" ng-click="">Edit</button>
         <button type="button" ng-click="">Delete</button>
         <button type="button" ng-click="MoveTaskDone(task)">>>></button>
       </div>
