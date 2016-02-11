@@ -12,12 +12,16 @@
   "license": "ISC",
   "dependencies": {
     "angular-xeditable-npm": "^0.1.9",
+    "bcrypt": "^0.8.5",
     "body-parser": "^1.14.2",
     "bootstrap": "^3.3.6",
     "express": "^4.13.4",
     "gulp": "^3.9.1",
     "mongodb": "^2.1.7",
     "mongoose": "^4.4.3",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^4.0.0",
     "pg-promise": "^3.1.6"
   },
   "devDependencies": {

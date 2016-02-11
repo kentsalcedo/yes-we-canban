@@ -6,6 +6,10 @@ var db         = require('./db/mongo');
 var bodyParser = require('body-parser');
 var Mongoose   = require('mongoose');
 var bcrypt     = require('bcrypt');
+var passport   = require('passport');
+var plm        = require('passport-local-mongoose');
+var LocalStrategy  = require( 'passport-local' ).Strategy;
+
 
 app.use(bodyParser.json());
 
@@ -67,16 +71,18 @@ app.get('*', function (req,res) {
 
 //============ register user ===================
 
-var usersSchema = Mongoose.Schema ({
+var User = Mongoose.Schema ({
   username  : String,
   password  : String
 });
 
-var users = Mongoose.model('users', usersSchema);
+var options = ({missingPasswordError: "Foutief password"});
+User.plugin(plm,options);
+
+var users = Mongoose.model('users', User);
 
 app.post('/api/register', function (req, res) {
-  var salt = bcrypt.genSaltSync(10);
-  var hash = bcrypt.hashSync(req.body.password, salt);
+  var hash = bcrypt.hashSync(req.body.password);
 
   new users({
     username : req.body.username,
@@ -85,9 +91,36 @@ app.post('/api/register', function (req, res) {
     return res.send('/login');
 });
 
+//============= logging in ======================
 
+passport.use( new LocalStrategy(
+  function (username, password, done) {
+    console.log("hash", password);
+    console.log("username", username);
+    todos.find({
+      username: username,
+      password: password
+    })
+  .then(function (user, err) {
+    bcrypt.compare(password, user.password, function (err, res) {
+      if( err ) {
+        throw err;
+      } else if( res === true ) {
+        return done( null, user);
+      } else {
+        return done( null, false );
+      }
+    });
+    });
+  })
+);
 
-
+function isAuthenticated ( req, res, next ) {
+  if( !req.isAuthenticated() ) {
+    return res.redirect( 'login' );
+  }
+  return next();
+}
 
 var server = app.listen(PORT, function(){
   console.log("listen on port " + PORT);
