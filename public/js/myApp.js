@@ -31,7 +31,7 @@ myApp
     })
     .when('/register', {
       templateUrl : 'views/register.html',
-      controller : 'TaskController'
+      controller : 'UserController'
     })
     .otherwise({
       templateUrl  : 'views/404.html',

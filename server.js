@@ -64,6 +64,27 @@ app.get('*', function (req,res) {
   res.sendFile('/public/index.html', { root : __dirname });
 });
 
+//============ register user ===================
+
+var usersSchema = Mongoose.Schema ({
+  username  : String,
+  password  : String
+});
+
+var users = Mongoose.model('users', usersSchema);
+
+app.post('/api/register', function (req, res) {
+  console.log("consoleLogging", req);
+  new users({
+    username : req.body.username,
+    password : req.body.password
+  }).save();
+    return res.send('/login');
+});
+
+
+
+
 
 var server = app.listen(PORT, function(){
   console.log("listen on port " + PORT);

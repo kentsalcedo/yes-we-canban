@@ -16,6 +16,10 @@ angular.module('myApp')
     this.deleteTask = function (taskId) {
       return $http.delete('/api/delete/' + taskId );
     };
+
+    this.addNewUser = function (newUser) {
+      return $http.post('/api/register', newUser);
+    };
   } // end of this function
 
 ]);
