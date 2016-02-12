@@ -24,7 +24,7 @@ $mobile : "only screen and (max-width:480px)";
 }
 
 body {
-  background-color: gray;
+  background-color: white;
   margin: 0px;
   padding: 0px;
   font-family: Dosis;
@@ -98,6 +98,7 @@ a:hover {
 }
 
 .taskColumn {
+  background-color: lightgray;
   width: 31%;
   min-height: 75vh;
   height: 100%;
@@ -119,8 +120,11 @@ a:hover {
 }
 
 .singleTask {
+  background-color: $neutral;
   border: 1px solid white;
+  overflow: hidden;
   margin: 15px;
+  height: 70px;
   padding: 0px 10px 10px 10px;
   -webkit-box-shadow: 6px 7px 29px -2px rgba(0,0,0,0.75);
   -moz-box-shadow: 6px 7px 29px -2px rgba(0,0,0,0.75);
@@ -128,11 +132,25 @@ a:hover {
 }
 
 .singleTask:hover {
+  height: 100%;
   -webkit-box-shadow: 6px 7px 29px 2px rgba(0,0,0,0.75);
   -moz-box-shadow: 6px 7px 29px 2px rgba(0,0,0,0.75);
   box-shadow: 6px 7px 29px 2px rgba(0,0,0,0.75);
 }
 
+.delete-button {
+  margin-top: 25px;
+  float: right;
+}
+
 .formTask {
+  margin-top: 100px;
+}
+
+.registerDiv {
+  margin-top: 100px;
+}
+
+.loginDiv {
   margin-top: 100px;
 }
