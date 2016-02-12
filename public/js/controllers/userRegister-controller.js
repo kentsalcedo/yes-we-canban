@@ -26,4 +26,15 @@ angular.module('myApp')
       });
     };
 
+    $scope.userLogout = function () {
+      console.log('controller: logout');
+      TaskService.userLogout()
+        .success(function (data) {
+          $location.path('/login');
+        })
+        .catch(function (err) {
+          console.error(err);
+        });
+    };
+
   }]);

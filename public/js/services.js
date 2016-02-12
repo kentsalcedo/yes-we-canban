@@ -10,7 +10,6 @@ angular.module('myApp')
     };
 
     this.updateTask = function (data) {
-      console.log('services: ', data);
       return $http.put('/api/update', data);
     };
 
@@ -23,12 +22,15 @@ angular.module('myApp')
     };
 
     this.userLogin = function (username) {
-      console.log("services.js", username);
       return $http.post('/login', username);
     };
 
+    this.userLogout = function () {
+      console.log('services: logout');
+      return $http.get('/logout');
+    };
+
     this.allUsers = function (username) {
-      console.log("services.js", username);
       return $http.post('/api/users', username);
     };
 

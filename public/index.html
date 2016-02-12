@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body ng-app="myApp">
-  <div id="navbar">
+  <div id="navbar" ng-controller="UserController">
 <!--     <ul>
       <li><a ng-href='/#/'>Home</a></li>
       <li><a ng-href='/#/tasks'>New Task</a></li>
@@ -16,7 +16,7 @@
     <div class="nav-addtask"><a ng-href='/#/tasks'>+</a></div>
     <div class="nav-login"><a ng-href='/#/login'>login</a></div>
     <div class="nav-login"><a ng-href='/#/register'>register</a></div>
-
+    <div class="nav-login"><a ng-click='userLogout()'>logout</a></div>
   </div>
 
   <div ng-view></div>

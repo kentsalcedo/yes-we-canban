@@ -52,6 +52,7 @@ app.get('/api', function (req, res) {
 });
 
 app.post('/api/add', function (req, res) {
+
   new todos({
     title     : req.body.title,
     desc      : req.body.desc,
@@ -111,15 +112,17 @@ app.post('/api/register', function (req, res) {
 
 //============= logging in ======================
 
-// app.get('/login', function(req,res){
-//   req.logout();
-// });
+app.get('/logout', function(req,res){
+  console.log('server: logout');
+  req.logout();
+  res.json({ "logout" : true });
+});
 
 passport.use(new LocalStrategy({
   passReqToCallback: true
   },
   function(req, username, password, done){
-    // var user;
+    var user;
     users.findOne({
       username : username
     })
@@ -133,12 +136,10 @@ passport.use(new LocalStrategy({
         console.log('under bcrypt',res);
         if(user.username === username && res === false){
           console.log("false", res);
-
           return done(null, false);
         }
         if(user.username === username && res === true){
           console.log("true", res);
-
           return done(null, user);
         }
       });
@@ -146,10 +147,26 @@ passport.use(new LocalStrategy({
   }
 ));
 
-app.post('/login', passport.authenticate('local', {
-    successRedirect : '/',
-    failureRedirect : '/login'
- }));
+// app.post('/login', passport.authenticate('local', {
+//     // successRedirect : '/',
+//     // failureRedirect : '/login'
+//  }));
+
+app.post('/login', function(req, res, next) {
+  passport.authenticate('local', function(err, user, info) {
+    console.log('post login');
+    console.log(user);
+    if (err) { return res.send('error'); }
+    // if (err) { return next(err); }
+    if (!user) { return res.send('wrong'); }
+    // if (!user) { return res.redirect('/login'); }
+    req.logIn(user, function(err) {
+      if (err) { return next(err); }
+      return res.send('hello');
+      // return res.redirect('/users/' + user.username);
+    });
+  })(req, res, next);
+});
 
 
 app.get('*', function (req,res) {
