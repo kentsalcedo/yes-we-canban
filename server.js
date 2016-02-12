@@ -11,9 +11,10 @@ var plm        = require('passport-local-mongoose');
 var LocalStrategy  = require( 'passport-local' ).Strategy;
 var users      = require('./db/Users');
 var todos      = require('./db/tasks');
+var sConfig = require('./config/express-session-config.json');
 
 //required by RIZ
-var cookieParser = require('cookie-parser');
+// var cookieParser = require('cookie-parser');
 var session    = require('express-session');
 //=======
 
@@ -21,11 +22,27 @@ app.use(bodyParser.json());
 app.use(express.static('./public'));
 
 //======Riz
-app.use(cookieParser());
-app.use(session({secret: 'anystring',
-                saveUninitialized: true,
-                resave: true}));
+// app.use(cookieParser());
+app.use(session(sConfig));
 //=======
+
+// //Initialize passport project in express
+app.use(passport.initialize());
+
+// //set passport session middleware to persist login sessions
+app.use(passport.session());
+
+// //in order to maintain persistent login session, the authenticated user must be serialized
+// //to the session. The user will be deserialized when each subsequent request is made.
+passport.serializeUser(function (user, done){
+//   // user is passed in from Local Strategy
+//   // user is attached to req.user
+  return done(null, user);
+});
+
+passport.deserializeUser(function (user, done){
+  return done(null, user);
+});
 
 app.get('/api', function (req, res) {
   todos.find(function (err, data) {
@@ -69,11 +86,14 @@ app.put('/api/update', function(req, res) {
     });
 });
 
-app.get('*', function (req,res) {
-  res.sendFile('/public/index.html', { root : __dirname });
-});
-
 //============ register user ===================
+
+app.get('/api/users', function (req, res) {
+  users.find(function (err, data) {
+    if (err) return console.error(err);
+    res.json(data);
+  });
+});
 
 app.post('/api/register', function (req, res) {
   var salt = bcrypt.genSaltSync(10);
@@ -91,22 +111,49 @@ app.post('/api/register', function (req, res) {
 
 //============= logging in ======================
 
-app.post('/api/login', function (req, res) {
-console.log("server.js", req.body);
-  var username = req.body.username;
-  var password = req.body.password;
-  users.findOne({ username: username,
-                  password: password },
-    function (err, user) {
-      if(err) {
-        console.log(err);
-        return res.send('/');
+// app.get('/login', function(req,res){
+//   req.logout();
+// });
+
+passport.use(new LocalStrategy({
+  passReqToCallback: true
+  },
+  function(req, username, password, done){
+    // var user;
+    users.findOne({
+      username : username
+    })
+    .then(function(data){
+      console.log(".success", data);
+      user = data;
+      if(!user){
+        return done(null, false);
       }
-      if(!users) {
-        return res.send('/api/login');
-      }
-      return res.send();
+      bcrypt.compare(password, user.password, function(err, res){
+        console.log('under bcrypt',res);
+        if(user.username === username && res === false){
+          console.log("false", res);
+
+          return done(null, false);
+        }
+        if(user.username === username && res === true){
+          console.log("true", res);
+
+          return done(null, user);
+        }
+      });
     });
+  }
+));
+
+app.post('/login', passport.authenticate('local', {
+    successRedirect : '/',
+    failureRedirect : '/login'
+ }));
+
+
+app.get('*', function (req,res) {
+  res.sendFile('/public/index.html', { root : __dirname });
 });
 
 var server = app.listen(PORT, function(){

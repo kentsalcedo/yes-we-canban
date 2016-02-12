@@ -33,6 +33,10 @@ myApp
       templateUrl : 'views/register.html',
       controller : 'UserController'
     })
+    .when('/api/users', {
+      templateUrl : 'views/register.html',
+      controller : 'UserController'
+    })
     .otherwise({
       templateUrl  : 'views/404.html',
     });

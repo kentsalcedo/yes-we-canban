@@ -24,7 +24,12 @@ angular.module('myApp')
 
     this.userLogin = function (username) {
       console.log("services.js", username);
-      return $http.post('/api/login', username);
+      return $http.post('/login', username);
+    };
+
+    this.allUsers = function (username) {
+      console.log("services.js", username);
+      return $http.post('/api/users', username);
     };
 
   } // end of this function

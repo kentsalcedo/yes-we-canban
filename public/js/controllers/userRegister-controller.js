@@ -15,9 +15,9 @@ angular.module('myApp')
         });
     };
 
-    $scope.userLogin = function (username) {
-      console.log("userRegister-controller.js", username);
-      TaskService.userLogin($scope.username)
+    $scope.userLogin = function (user) {
+      console.log("userRegister-controller.js", user);
+      TaskService.userLogin(user)
       .success(function (data) {
         $location.path('/');
       })
