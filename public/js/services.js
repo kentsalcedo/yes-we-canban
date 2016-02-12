@@ -21,6 +21,12 @@ angular.module('myApp')
     this.addNewUser = function (newUser) {
       return $http.post('/api/register', newUser);
     };
+
+    this.userLogin = function (username) {
+      console.log("services.js", username);
+      return $http.post('/api/login', username);
+    };
+
   } // end of this function
 
 ]);

@@ -6,7 +6,6 @@ angular.module('myApp')
     $scope.newUserArray = [];
 
     $scope.addNewUser = function (newUser) {
-      console.log("consoleLogging", $scope.newUser);
       TaskService.addNewUser($scope.newUser)
         .success(function (data) {
           $location.path('/');
@@ -14,6 +13,17 @@ angular.module('myApp')
         .catch(function (err) {
           console.error(err);
         });
+    };
+
+    $scope.userLogin = function (username) {
+      console.log("userRegister-controller.js", username);
+      TaskService.userLogin($scope.username)
+      .success(function (data) {
+        $location.path('/');
+      })
+      .catch(function (err) {
+        console.error(err);
+      });
     };
 
   }]);

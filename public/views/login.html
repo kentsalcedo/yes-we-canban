@@ -1,14 +1,14 @@
 <div class="loginDiv">
-  <form class="loginForm" ng-submit="">
+  <form class="loginForm" ng-submit="userLogin(username)">
     <fieldset>
       <div class="userNameForm">
         <label for="userNameForm">Username</label>
-        <input id="userNameForm" type="text" ng-model="" />
+        <input id="userNameForm" type="text" ng-model="userLogin.username" />
       </div>
 
       <div class="pwForm">
         <label for="pwForm">Password</label>
-        <input id="pwForm" type="text" ng-model="" />
+        <input id="pwForm" type="text" ng-model="userLogin.password" />
       </div>
 
       <div class="commit">

@@ -18,7 +18,6 @@ var session    = require('express-session');
 //=======
 
 app.use(bodyParser.json());
-
 app.use(express.static('./public'));
 
 //======Riz
@@ -29,7 +28,6 @@ app.use(session({secret: 'anystring',
 //=======
 
 app.get('/api', function (req, res) {
-  console.log("session", req.session);
   todos.find(function (err, data) {
     if (err) return console.error(err);
     res.json(data);
@@ -45,10 +43,7 @@ app.post('/api/add', function (req, res) {
     assignedTo: req.body.assignedTo,
     status    : "__status__toDo__"
   }).save();
-    // .then(function (data) {
-      // console.log('redirect');
-      return res.send('/');
-    // });
+    return res.send('/');
 });
 
 app.delete('/api/delete/:id', function (req, res) {
@@ -62,7 +57,6 @@ app.delete('/api/delete/:id', function (req, res) {
 });
 
 app.put('/api/update', function(req, res) {
-  console.log('server',req.body);
   todos.update(
     { _id : req.body._id },
     { $set : req.body },
@@ -73,13 +67,6 @@ app.put('/api/update', function(req, res) {
       console.log('server data upsert',data);
       return res.json(data);
     });
-  // .then(function (data) {
-  //   return res.json( data );
-  // })
-  // .catch(function (err) {
-  //   console.error(err);
-  // });
-
 });
 
 app.get('*', function (req,res) {
@@ -104,6 +91,23 @@ app.post('/api/register', function (req, res) {
 
 //============= logging in ======================
 
+app.post('/api/login', function (req, res) {
+console.log("server.js", req.body);
+  var username = req.body.username;
+  var password = req.body.password;
+  users.findOne({ username: username,
+                  password: password },
+    function (err, user) {
+      if(err) {
+        console.log(err);
+        return res.send('/');
+      }
+      if(!users) {
+        return res.send('/api/login');
+      }
+      return res.send();
+    });
+});
 
 var server = app.listen(PORT, function(){
   console.log("listen on port " + PORT);

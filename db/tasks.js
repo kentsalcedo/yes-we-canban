@@ -2,6 +2,7 @@
 var db       = require('./mongo');
 var Mongoose = require('mongoose');
 var Schema   = Mongoose.Schema;
+var users    = require('./Users');
 
 var tasksSchema = Schema ({
   title     : String,
@@ -12,7 +13,7 @@ var tasksSchema = Schema ({
   status    : String
 });
 
-var todos = Mongoose.model('Task', tasksSchema);
+var todos = Mongoose.model('todos', tasksSchema);
 
 function _add (req) {
 
