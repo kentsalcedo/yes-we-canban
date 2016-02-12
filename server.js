@@ -104,6 +104,9 @@ app.post('/api/register', function (req, res) {
 
 //============= logging in ======================
 
+app.get('/api/login', function (req, res) {
+
+});
 
 var server = app.listen(PORT, function(){
   console.log("listen on port " + PORT);
