@@ -9,24 +9,27 @@ var bcrypt     = require('bcrypt');
 var passport   = require('passport');
 var plm        = require('passport-local-mongoose');
 var LocalStrategy  = require( 'passport-local' ).Strategy;
+var users      = require('./db/Users');
+var todos      = require('./db/tasks');
 
+//required by RIZ
+var cookieParser = require('cookie-parser');
+var session    = require('express-session');
+//=======
 
 app.use(bodyParser.json());
 
-var tasksSchema = Mongoose.Schema ({
-  title     : String,
-  desc      : String,
-  priority  : String,
-  createdBy : String,
-  assignedTo: String,
-  status    : String
-});
-
-var todos = Mongoose.model('todos', tasksSchema);
-
 app.use(express.static('./public'));
 
+//======Riz
+app.use(cookieParser());
+app.use(session({secret: 'anystring',
+                saveUninitialized: true,
+                resave: true}));
+//=======
+
 app.get('/api', function (req, res) {
+  console.log("session", req.session);
   todos.find(function (err, data) {
     if (err) return console.error(err);
     res.json(data);
@@ -85,16 +88,6 @@ app.get('*', function (req,res) {
 
 //============ register user ===================
 
-var User = Mongoose.Schema ({
-  firstName : String,
-  lastName  : String,
-  email     : String,
-  username  : String,
-  password  : String
-});
-
-var users = Mongoose.model('users', User);
-
 app.post('/api/register', function (req, res) {
   var salt = bcrypt.genSaltSync(10);
   var hash = bcrypt.hashSync(req.body.password, salt);
@@ -115,3 +108,5 @@ app.post('/api/register', function (req, res) {
 var server = app.listen(PORT, function(){
   console.log("listen on port " + PORT);
 });
+
+module.exports = app;
