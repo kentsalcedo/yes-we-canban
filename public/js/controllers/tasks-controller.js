@@ -39,6 +39,7 @@ angular.module('myApp')
     };
 
     $scope.updateTask = function(task) {
+      console.log('controller: ', task);
       TaskService.updateTask(task)
         .then(function(response) {
             $scope.tasks = response.data;

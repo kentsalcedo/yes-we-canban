@@ -60,7 +60,6 @@ app.delete('/api/delete/:id', function (req, res) {
 
 app.put('/api/update', function(req, res) {
   console.log('server',req.body);
-
   todos.update(
     { _id : req.body._id },
     { $set : req.body },
