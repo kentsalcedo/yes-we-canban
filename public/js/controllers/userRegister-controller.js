@@ -6,9 +6,10 @@ angular.module('myApp')
     $scope.newUserArray = [];
 
     $scope.addNewUser = function (newUser) {
+      console.log("consoleLogging", $scope.newUser);
       TaskService.addNewUser($scope.newUser)
-        .success(function () {
-          $location.path('/login');
+        .success(function (data) {
+          $location.path('/');
         })
         .catch(function (err) {
           console.error(err);

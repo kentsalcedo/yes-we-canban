@@ -26,8 +26,8 @@ myApp
       controller : 'TaskController'
     })
     .when('/login', {
-      templateUrl : 'views/login.html',
-      controller : 'TaskController'
+      templateUrl : 'views/login.html'
+      // controller : 'UserController'
     })
     .when('/register', {
       templateUrl : 'views/register.html',
