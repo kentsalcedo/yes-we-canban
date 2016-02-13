@@ -44,28 +44,29 @@ passport.deserializeUser(function (user, done){
   return done(null, user);
 });
 
-app.get('/api', function (req, res) {
-  console.log(req);
+var auth = function(req, res, next){ if (!req.isAuthenticated()) res.send(401); else next(); };
+
+app.get('/api', auth, function (req, res) {
   todos.find(function (err, data) {
     if (err) return console.error(err);
     res.json(data);
   });
 });
 
-app.post('/api/add', function (req, res) {
+app.post('/api/add', auth, function (req, res) {
 
   new todos({
     title     : req.body.title,
     desc      : req.body.desc,
     priority  : req.body.priority,
-    createdBy : req.body.createdBy,
+    createdBy : req.user,
     assignedTo: req.body.assignedTo,
     status    : "__status__toDo__"
   }).save();
     return res.send('/');
 });
 
-app.delete('/api/delete/:id', function (req, res) {
+app.delete('/api/delete/:id', auth, function (req, res) {
   todos.find({ _id: req.params.id}).remove().exec()
   .then(function (data) {
     return res.json( data );
@@ -75,15 +76,13 @@ app.delete('/api/delete/:id', function (req, res) {
   });
 });
 
-app.put('/api/update', function(req, res) {
+app.put('/api/update', auth, function(req, res) {
   todos.update(
     { _id : req.body._id },
     { $set : req.body },
-    // { $set : { status : '__status__inProg__'}},
     { upsert : true },
     function(err, data){
       if(err) console.error(err);
-      console.log('server data upsert',data);
       return res.json(data);
     });
 });
@@ -123,30 +122,21 @@ passport.use(new LocalStrategy({
       username : username
     })
     .then(function(data){
-      console.log(".success", data);
       user = data;
       if(!user){
         return done(null, false);
       }
       bcrypt.compare(password, user.password, function(err, res){
-        console.log('under bcrypt',res);
         if(user.username === username && res === false){
-          console.log("false", res);
           return done(null, false);
         }
         if(user.username === username && res === true){
-          console.log("true", res);
           return done(null, user);
         }
       });
     });
   }
 ));
-
-// app.post('/login', passport.authenticate('local', {
-//     // successRedirect : '/',
-//     // failureRedirect : '/login'
-//  }));
 
 app.post('/login', function(req, res, next) {
   passport.authenticate('local', function(err, user, info) {
@@ -155,21 +145,18 @@ app.post('/login', function(req, res, next) {
       return next('error');
     }
     if (!user) {
-      console.log("server not correct user");
       return res.sendStatus(401);
     }
     req.logIn(user, function(err) {
       if (err) {
         return next(err);
       }
-      console.log("helllllloooo");
       return res.sendStatus(200);
     });
   })(req, res, next);
 });
 
 app.get('/logout', function(req,res){
-  console.log('server: logout');
   req.logout();
   res.json({ "logout" : true });
 });
