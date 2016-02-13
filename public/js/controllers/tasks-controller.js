@@ -46,7 +46,6 @@ angular.module('myApp')
       });
     };
 
-    //will pass data to service
     $scope.MoveTaskToDo = function (task) {
       task.status = '__status__toDo__';
       TaskService.updateTask(task)
