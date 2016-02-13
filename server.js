@@ -45,6 +45,7 @@ passport.deserializeUser(function (user, done){
 });
 
 app.get('/api', function (req, res) {
+  console.log(req);
   todos.find(function (err, data) {
     if (err) return console.error(err);
     res.json(data);
