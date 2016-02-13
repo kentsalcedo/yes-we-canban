@@ -9,7 +9,7 @@
       <h2 class="new_task_title" editable-text="task.title" onbeforesave="updateTask(task)">{{ task.title }}</h2>
       <p class"new_task_desc" editable-text="task.desc" onbeforesave="updateTask(task)">{{ "DESC: " + task.desc }}</p>
       <p class"new_task_priority" editable-text="task.priority" onbeforesave="updateTask(task)">{{ "PRIORITY: " + task.priority }}</p>
-      <p class"new_task_createBy" editable-text="task.createdBy" onbeforesave="updateTask(task)">{{ "CREATED BY: " + task.createdBy.firstName }}</p>
+      <p class"new_task_createBy">{{ "CREATED BY: " + task.createdBy.firstName }}</p>
       <p class"new_task_assignedTo" editable-text="task.assignedTo" onbeforesave="updateTask(task)">{{ "ASSIGNED TO: " + task.assignedTo }}</p>
 
       <button type="button" ng-click="MoveTaskInProgress(task)">>>></button>

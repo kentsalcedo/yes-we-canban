@@ -39,7 +39,6 @@ angular.module('myApp')
     };
 
     $scope.updateTask = function(task) {
-      console.log('controller: ', task);
       TaskService.updateTask(task)
         .then(function(response) {
             $scope.tasks = response.data;
@@ -49,7 +48,6 @@ angular.module('myApp')
 
     //will pass data to service
     $scope.MoveTaskToDo = function (task) {
-      console.log("controller fired: ", task);
       task.status = '__status__toDo__';
       TaskService.updateTask(task)
         .success(function(data) {
@@ -64,7 +62,6 @@ angular.module('myApp')
     };
 
     $scope.MoveTaskInProgress = function (task) {
-      console.log("controller fired: ", task);
       task.status = '__status__inProg__';
       TaskService.updateTask(task)
         .success(function(data) {
@@ -79,7 +76,6 @@ angular.module('myApp')
     };
 
     $scope.MoveTaskDone = function (task) {
-      console.log("controller fired: ", task);
       task.status = '__status__done__';
       TaskService.updateTask(task)
         .success(function(data) {
@@ -94,7 +90,6 @@ angular.module('myApp')
     };
 
     $scope.MoveTaskOut = function (task) {
-      console.log("controller fired: ", task);
       task.status = '__status__clear__';
       TaskService.updateTask(task)
         .success(function(data) {

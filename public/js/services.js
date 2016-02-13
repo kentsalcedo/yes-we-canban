@@ -26,7 +26,6 @@ angular.module('myApp')
     };
 
     this.userLogout = function () {
-      console.log('services: logout');
       return $http.get('/logout');
     };
 
