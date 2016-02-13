@@ -24,7 +24,7 @@ a:hover {
 #navbar {
   width: 100%;
   height: 60px;
-  background-color: #252C7E;
+  background-color: #E9CE09;
   position: absolute;
   top: 0;
   left: 0;
@@ -40,13 +40,12 @@ a:hover {
   bottom: 0; }
 
 .nav-btn:hover {
-  border-bottom: 3px solid #E9CE09; }
+  border-bottom: 3px solid #B10000; }
 
 .nav-home {
   float: right; }
 
 .nav-addtask {
-  background-color: #E9CE09;
   float: left;
   border-radius: 25px;
   width: 50px;
@@ -72,12 +71,12 @@ a:hover {
   width: 100%; }
 
 .taskColumn {
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(255, 255, 255, 0.6);
   width: 31%;
   min-height: 80vh;
   height: 100%;
   float: left;
-  margin: 59px 10px 20px 10px; }
+  margin: 80px 10px 20px 10px; }
 
 .col-title {
   background-color: #252C7E;
@@ -93,9 +92,7 @@ a:hover {
 .singleTask {
   background-color: #FCFBE3;
   border: 1px solid white;
-  overflow: hidden;
   margin: 15px;
-  height: 70px;
   padding: 0px 10px 10px 10px;
   -webkit-box-shadow: 6px 7px 29px -2px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 6px 7px 29px -2px rgba(0, 0, 0, 0.75);
@@ -106,6 +103,9 @@ a:hover {
   -webkit-box-shadow: 6px 7px 29px 2px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 6px 7px 29px 2px rgba(0, 0, 0, 0.75);
   box-shadow: 6px 7px 29px 2px rgba(0, 0, 0, 0.75); }
+
+.editable-input {
+  width: 100%; }
 
 .delete-button {
   margin-top: 15px;
@@ -122,3 +122,9 @@ a:hover {
 
 .notfound {
   margin-top: 100px; }
+
+.btn-primary {
+  display: none; }
+
+.btn-default {
+  display: none; }
