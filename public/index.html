@@ -6,6 +6,8 @@
   <!-- <link rel="stylesheet" href="/css/animation.css"> -->
   <link rel="stylesheet" href="/css/styles.css">
   <link href="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap-editable/css/bootstrap-editable.css" rel="stylesheet"/>
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+
 </head>
 <body ng-app="myApp">
   <div id="navbar" ng-controller="UserController">
@@ -16,7 +18,9 @@
     <div class="nav-login"><a ng-click='userLogout()'>logout</a></div>
   </div>
 
-  <div ng-view></div>
+  <div ng-view id="main">
+
+  </div>
 
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
@@ -28,6 +32,8 @@
   <script type="text/javascript" src="js/controllers/userRegister-controller.js"></script>
   <script type="text/javascript" src="js/services.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
+  <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 
 
 </body>

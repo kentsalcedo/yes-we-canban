@@ -25,6 +25,7 @@ $mobile : "only screen and (max-width:480px)";
 
 body {
   background-color: white;
+  background-image: url('/images/wood.png');
   margin: 0px;
   padding: 0px;
   font-family: Dosis;
@@ -86,6 +87,7 @@ a:hover {
 
 #main {
   margin: auto;
+  background-color:red;
 }
 
 .new-task-main {
@@ -98,11 +100,10 @@ a:hover {
 }
 
 .taskColumn {
-  background-color: lightgray;
+  background:rgba(0,0,0,0.6);
   width: 31%;
-  min-height: 75vh;
+  min-height: 80vh;
   height: 100%;
-  border: 7px solid black;
   float: left;
   margin: 99px 10px 20px 10px;
 
@@ -139,7 +140,7 @@ a:hover {
 }
 
 .delete-button {
-  margin-top: 25px;
+  margin-top: 15px;
   float: right;
 }
 
