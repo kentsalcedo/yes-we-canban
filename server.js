@@ -56,6 +56,7 @@ app.get('/api', auth, function (req, res) {
 app.post('/api/add', auth, function (req, res) {
 
   new todos({
+    group     : req.body.group,
     title     : req.body.title,
     desc      : req.body.desc,
     priority  : req.body.priority,

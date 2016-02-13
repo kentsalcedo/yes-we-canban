@@ -98,7 +98,6 @@ a:hover {
   background-color: red;
 }
 
-
 #newTask {
   border: 1px solid white;
   width: 100%;
@@ -155,10 +154,6 @@ a:hover {
   float: right;
 }
 
-.formTask {
-  margin-top: 100px;
-}
-
 .registerDiv {
   margin-top: 100px;
 }
@@ -171,10 +166,34 @@ a:hover {
   margin-top: 100px;
 }
 
-.btn-primary {
-  display: none;
+//============= task block ==============
+
+.formTask {
+  // margin-left: 80px;
 }
 
-.btn-default {
-  display: none;
+.new-task-main {
+  padding: 10%;
 }
+
+.btn-group {
+  margin: 10px;
+}
+
+
+.group_block {
+  background-color: purple;
+  flex-flow: row no wrap;
+}
+
+#task_form_block {
+  background-color: green;
+  width: 100%;
+}
+
+// .btn-primary {
+//   display: none;}
+
+// .btn-default {
+//   display: none;
+// }

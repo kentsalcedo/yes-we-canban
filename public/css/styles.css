@@ -111,9 +111,6 @@ a:hover {
   margin-top: 15px;
   float: right; }
 
-.formTask {
-  margin-top: 100px; }
-
 .registerDiv {
   margin-top: 100px; }
 
@@ -123,8 +120,16 @@ a:hover {
 .notfound {
   margin-top: 100px; }
 
-.btn-primary {
-  display: none; }
+.new-task-main {
+  padding: 10%; }
 
-.btn-default {
-  display: none; }
+.btn-group {
+  margin: 10px; }
+
+.group_block {
+  background-color: purple;
+  flex-flow: row no wrap; }
+
+#task_form_block {
+  background-color: green;
+  width: 100%; }

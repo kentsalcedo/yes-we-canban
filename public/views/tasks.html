@@ -1,28 +1,63 @@
 
-<div class="new-task-main">
-  <form class="formTask" ng-submit="addTask()">
-    <fieldset>
-      <div class="new_task_title">
-        <label for="new_task_title">New Task Title</label>
-        <input id="new_task_title" type="text" ng-model="new_task.title" />
-      </div>
+  <div class="new-task-main" ng-submit="addTask()">
 
-      <div class="new_task_desc">
-        <label for="new_task_desc">Description</label>
-        <input id="new_task_desc" type="text" ng-model="new_task.desc" />
-      </div>
+    <!-- <div class="group_block"> -->
+     <div class="btn-group">
+       <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         New Group
+       </button>
+       <div class="dropdown-menu">
+         <form class="groupForm">
+           <fieldset>
+             <div class="new_group_name">
+               <label for="new_group_name">Name of Group</label>
+               <div><input type="text" id="new_group_name" ng-model="new_task_group"></div>
+             </div>
+            <button type="submit">Create!</button>
+           </fieldset>
+         </form>
+       </div>
+     </div>
 
-      <div class="new_task_priority">
-        <label for="new_task_priority">Priority</label>
-        <input id="new_task_priority" type="text" ng-model="new_task.priority" />
-      </div>
+     <div class="btn-group">
+       <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         Join Group
+       </button>
+       <div class="dropdown-menu">
+         <a class="dropdown-item" href="#">Join Group</a>
+         <a class="dropdown-item" href="#">Another action</a>
+         <a class="dropdown-item" href="#">Something else here</a>
+         <div class="dropdown-divider"></div>
+         <a class="dropdown-item" href="#">Separated link</a>
+       </div>
+     </div>
+    <!-- </div> -->
 
-      <div class="new_task_assignedTo">
-        <label for="new_task_assignedTo">Assigned To</label>
-        <input id="new_task_assignedTo" type="text" ng-model="new_task.assignedTo" />
-      </div>
+  <div id="task_form_block">
+    <form class="formTask">
+      <fieldset>
+        <div class="new_task_title">
+          <label for="new_task_title">New Task Title</label>
+          <div><input id="new_task_title" type="text" ng-model="new_task.title" /></div>
+        </div>
 
-      <button type="submit">Add Task</button>
-    </fieldset>
-  </form>
-</div>
+        <div class="new_task_desc">
+          <label for="new_task_desc">Description</label>
+          <div><input id="new_task_desc" type="text" ng-model="new_task.desc" /></div>
+        </div>
+
+        <div class="new_task_priority">
+          <label for="new_task_priority">Priority</label>
+          <div><input id="new_task_priority" type="text" ng-model="new_task.priority" /></div>
+        </div>
+
+        <div class="new_task_assignedTo">
+          <label for="new_task_assignedTo">Assigned To</label>
+          <div><input id="new_task_assignedTo" type="text" ng-model="new_task.assignedTo" /></div>
+        </div>
+
+        <button type="submit">Add Task</button>
+      </fieldset>
+    </form>
+    </div>
+  </div>
