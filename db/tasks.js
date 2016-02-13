@@ -5,6 +5,7 @@ var Schema   = Mongoose.Schema;
 var users    = require('./Users');
 
 var tasksSchema = Schema ({
+  group     : [String],
   title     : String,
   desc      : String,
   priority  : String,
@@ -18,6 +19,7 @@ var todos = Mongoose.model('todos', tasksSchema);
 function _add (req) {
 
   return new TasksModel({
+    group     : req.group,
     title     : req.title,
     desc      : req.desc,
     priority  : req.priority,
