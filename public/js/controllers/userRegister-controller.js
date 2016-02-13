@@ -17,8 +17,10 @@ angular.module('myApp')
 
     $scope.userLogin = function (user) {
       console.log("userRegister-controller.js", user);
+
       TaskService.userLogin(user)
       .success(function (data) {
+        console.log("don't come in hererrr!",data);
         $location.path('/');
       })
       .catch(function (err) {

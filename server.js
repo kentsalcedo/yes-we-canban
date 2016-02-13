@@ -112,11 +112,6 @@ app.post('/api/register', function (req, res) {
 
 //============= logging in ======================
 
-app.get('/logout', function(req,res){
-  console.log('server: logout');
-  req.logout();
-  res.json({ "logout" : true });
-});
 
 passport.use(new LocalStrategy({
   passReqToCallback: true
@@ -154,20 +149,29 @@ passport.use(new LocalStrategy({
 
 app.post('/login', function(req, res, next) {
   passport.authenticate('local', function(err, user, info) {
-    console.log('post login');
-    console.log(user);
-    if (err) { return res.send('error'); }
-    // if (err) { return next(err); }
-    if (!user) { return res.send('wrong'); }
-    // if (!user) { return res.redirect('/login'); }
+
+    if (err) {
+      return next('error');
+    }
+    if (!user) {
+      console.log("server not correct user");
+      return res.sendStatus(401);
+    }
     req.logIn(user, function(err) {
-      if (err) { return next(err); }
-      return res.send('hello');
-      // return res.redirect('/users/' + user.username);
+      if (err) {
+        return next(err);
+      }
+      console.log("helllllloooo");
+      return res.sendStatus(200);
     });
   })(req, res, next);
 });
 
+app.get('/logout', function(req,res){
+  console.log('server: logout');
+  req.logout();
+  res.json({ "logout" : true });
+});
 
 app.get('*', function (req,res) {
   res.sendFile('/public/index.html', { root : __dirname });
