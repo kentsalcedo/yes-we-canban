@@ -29,42 +29,27 @@ a:hover {
   top: 0;
   left: 0; }
 
-.nav-home {
-  float: right;
+.nav-btn {
   background-color: orange;
-  width: 50px;
+  width: 70px;
   height: 50px;
   line-height: 50px;
   font-size: 20px;
   text-align: center;
-  border-radius: 25px;
-  margin: 20px 10px; }
+  margin: 50px 5px 0px 5px;
+  bottom: 0; }
+
+.nav-home {
+  float: right; }
 
 .nav-addtask {
-  float: left;
-  background-color: orange;
-  width: 50px;
-  height: 50px;
-  line-height: 40px;
-  font-size: 50px;
-  text-align: center;
-  border-radius: 25px;
-  margin: 20px 10px; }
+  float: left; }
 
 .nav-login {
-  float: right;
-  background-color: orange;
-  width: 50px;
-  height: 50px;
-  line-height: 50px;
-  font-size: 20px;
-  text-align: center;
-  border-radius: 25px;
-  margin: 20px 10px; }
+  float: right; }
 
 #main {
-  margin: auto;
-  background-color: red; }
+  margin: auto; }
 
 .new-task-main {
   margin-top: 100px; }

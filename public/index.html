@@ -5,17 +5,15 @@
   <title>Yes We CanBan</title>
   <!-- <link rel="stylesheet" href="/css/animation.css"> -->
   <link rel="stylesheet" href="/css/styles.css">
-  <link href="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap-editable/css/bootstrap-editable.css" rel="stylesheet"/>
-  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
 
 </head>
 <body ng-app="myApp">
   <div id="navbar" ng-controller="UserController">
-    <div class="nav-home"><a ng-href='/#/'>home</a></div>
-    <div class="nav-addtask"><a ng-href='/#/tasks'>+</a></div>
-    <div class="nav-login"><a ng-href='/#/login'>login</a></div>
-    <div class="nav-login"><a ng-href='/#/register'>register</a></div>
-    <div class="nav-login"><a ng-click='userLogout()'>logout</a></div>
+    <div class="nav-btn nav-home"><a ng-href='/#/'>home</a></div>
+    <div class="nav-btn nav-addtask"><a ng-href='/#/tasks'>+</a></div>
+    <div class="nav-btn nav-login"><a ng-href='/#/login'>login</a></div>
+    <div class="nav-btn nav-login"><a ng-href='/#/register'>register</a></div>
+    <div class="nav-btn nav-login"><a ng-click='userLogout()'>logout</a></div>
   </div>
 
   <div ng-view id="main">
@@ -31,9 +29,9 @@
   <script type="text/javascript" src="js/controllers/tasks-controller.js"></script>
   <script type="text/javascript" src="js/controllers/userRegister-controller.js"></script>
   <script type="text/javascript" src="js/services.js"></script>
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
   <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
-  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 
 
 </body>
