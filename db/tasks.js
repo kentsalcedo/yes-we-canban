@@ -8,7 +8,7 @@ var tasksSchema = Schema ({
   title     : String,
   desc      : String,
   priority  : String,
-  createdBy : String,
+  createdBy : Schema.Types.Mixed,
   assignedTo: String,
   status    : String
 });
