@@ -1,7 +1,7 @@
 //COLOR VARIABLES
-// $tertiary : #81B1B2; //
-// $secondary : #000000; //black
-// $main : #FAE894; //mellow yellow
+$tertiary : #252C7E; // dark blue
+$secondary : #B10000; // red
+$main : #E9CE09; //mellow yellow
 $neutral : #FCFBE3; //creme
 $dark: #181A1B; //charcoal
 
@@ -42,23 +42,27 @@ a:hover {
 
 #navbar {
   width: 100%;
-  height: 100px;
-  // background-color: black;
   position: absolute;
   top: 0;
   left: 0;
+  box-shadow: 6px 7px 29px -2px rgba(0,0,0,0.75);
 }
 
 .nav-btn {
-  background-color: orange;
+  // background-color: $main;
   width: 70px;
   height: 50px;
   line-height: 50px;
   font-size: 20px;
   text-align: center;
   // border-radius: 25px;
-  margin: 50px 5px 0px 5px;
+  margin: 10px 5px 0px 5px;
   bottom: 0;
+}
+
+.nav-btn:hover {
+  // background-color: red;
+  border-bottom: 3px solid $main;
 }
 
 .nav-home {
@@ -66,7 +70,14 @@ a:hover {
 }
 
 .nav-addtask {
+  background-color: $main;
   float: left;
+  border-radius: 25px;
+  width: 50px;
+  height: 50px;
+  font-size: 30px;
+  margin-top: 0px;
+  margin-bottom: 5px;
 }
 
 .nav-login {
@@ -81,6 +92,11 @@ a:hover {
   margin-top: 100px;
 }
 
+#main-task-container {
+  background-color: red;
+}
+
+
 #newTask {
   border: 1px solid white;
   width: 100%;
@@ -92,12 +108,12 @@ a:hover {
   min-height: 80vh;
   height: 100%;
   float: left;
-  margin: 99px 10px 20px 10px;
+  margin: 59px 10px 20px 10px;
 
 }
 
 .col-title {
-  background-color: black;
+  background-color: $tertiary;
   text-align: center;
   color: white;
   font-size: 20px;
@@ -105,6 +121,7 @@ a:hover {
   width: 100%;
   height: 40px;
   font-family: Montserrat;
+  border-bottom: 5px solid $secondary;
 }
 
 .singleTask {
