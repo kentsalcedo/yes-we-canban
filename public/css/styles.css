@@ -14,12 +14,15 @@ body {
   padding: 0px;
   font-family: Dosis; }
 
+a:-webkit-any-link {
+  text-decoration: none; }
+
 a {
   text-decoration: none;
   color: white; }
 
 a:hover {
-  color: red; }
+  color: #B10000; }
 
 #navbar {
   width: 100%;
@@ -47,24 +50,28 @@ a:hover {
 
 .nav-addtask {
   float: left;
+  border: none;
   border-radius: 25px;
   width: 50px;
   height: 50px;
   font-size: 30px;
   margin-top: 0px;
-  margin-bottom: 5px; }
+  margin-bottom: 5px;
+  line-height: 50px; }
 
 .nav-login {
   float: right; }
 
 #main {
-  margin: auto; }
+  margin: auto;
+  min-height: 80vh;
+  max-height: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center; }
 
 .new-task-main {
   margin-top: 100px; }
-
-#main-task-container {
-  background-color: red; }
 
 #newTask {
   border: 1px solid white;
@@ -76,7 +83,8 @@ a:hover {
   min-height: 80vh;
   height: 100%;
   float: left;
-  margin: 80px 10px 20px 10px; }
+  margin: 80px 10px 20px 10px;
+  flex-direction: row; }
 
 .col-title {
   background-color: #252C7E;
@@ -133,3 +141,22 @@ a:hover {
 #task_form_block {
   background-color: green;
   width: 100%; }
+
+.btn-primary {
+  background-color: red;
+  display: none; }
+
+.btn-default {
+  background-color: red;
+  display: none; }
+
+#footer {
+  min-height: 35px;
+  width: 100%;
+  background-color: #252C7E;
+  position: relative;
+  margin-top: 15px;
+  bottom: 0;
+  left: 0;
+  opacity: 0.9;
+  box-shadow: rgba(0, 0, 0, 0.2) 5px 3px 5px 5px; }

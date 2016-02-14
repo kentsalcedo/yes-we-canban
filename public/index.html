@@ -3,22 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <title>Yes We CanBan</title>
-  <link rel="stylesheet" href="/css/styles.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/styles.css">
+
 
 </head>
 <body ng-app="myApp">
   <div id="navbar" ng-controller="UserController">
     <div class="nav-btn nav-home"><a ng-href='/#/'>home</a></div>
-    <div class="nav-btn nav-addtask"><a ng-href='/#/tasks'>+</a></div>
+    <div class="nav-addtask"><a ng-href='/#/tasks'>+</a></div>
     <div class="nav-btn nav-login"><a ng-href='/#/login'>login</a></div>
     <div class="nav-btn nav-login"><a ng-href='/#/register'>register</a></div>
-    <div class="nav-btn nav-login"><a ng-click='userLogout()'>logout</a></div>
+    <div class="nav-btn nav-login"><a ng-click='userLogout()' id="logout-btn">logout</a></div>
   </div>
 
-  <div ng-view id="main">
-
-  </div>
+  <div ng-view id="main"></div>
 
 
   <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
