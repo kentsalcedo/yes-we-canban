@@ -1,3 +1,7 @@
+<div class="full-bleed">
+  <span class="welcome">yes we can.ban</span>
+</div>
+
 
 <div class="taskColumn">
   <div class="col-title">TO DO</div>
@@ -6,13 +10,13 @@
     <button type="button" ng-click="deleteTask(task._id)" class="delete-button">x</button>
     <button type="button" ng-click="MoveTaskInProgress(task)" class="update-status-btn">>>></button>
 
-    <h3 class="new_task_title" editable-text="task.title" onbeforesave="updateTask(task)" ng-click="showDetails = ! showDetails"> >> {{ task.title }}</h3>
+    <a href="#" ng-click="showDetails = ! showDetails"><h3 class="new_task_title"> >> {{ task.title }}</h3></a>
+
       <div class="task-details" ng-class="{ 'hidden': ! showDetails }" ng-show="showDetails">
-        <p class"new_task_desc" editable-text="task.desc" onbeforesave="updateTask(task)">{{ "DESC: " + task.desc }}</p>
-        <p class"new_task_priority" editable-text="task.priority" onbeforesave="updateTask(task)">{{ "PRIORITY: " + task.priority }}</p>
-        <p class"new_task_assignedTo" editable-text="task.assignedTo" onbeforesave="updateTask(task)">{{ "ASSIGNED TO: " + task.assignedTo }}</p>
-        <p class"new_task_createBy">{{ "CREATED BY: " + task.createdBy.firstName }}</p>
-        <!-- <p class"new_task_createBy">{{ "SHOW?: " + task.show }}</p> -->
+        <p class"new_task_desc" editable-text="task.desc" onbeforesave="updateTask(task)"><span class="form-label">DESC: </span>{{ task.desc }}</p>
+        <p class"new_task_priority" editable-text="task.priority" onbeforesave="updateTask(task)"><span class="form-label">PRIORITY: </span>{{ task.priority }}</p>
+        <p class"new_task_assignedTo" editable-text="task.assignedTo" onbeforesave="updateTask(task)"><span class="form-label">ASSIGNED TO: </span>{{ task.assignedTo }}</p>
+        <p class"new_task_createBy"><span class="form-label">CREATED BY: </span>{{ task.createdBy.firstName }}</p>
       </div>
   </div>
 
@@ -27,12 +31,15 @@
     <button type="button" ng-click="MoveTaskDone(task)" class="update-status-btn">>>></button>
     <button type="button" ng-click="MoveTaskToDo(task)" class="update-status-btn"><<<</button>
 
-    <h3 class="new_task_title" editable-text="task.title" onbeforesave="updateTask(task)"> >> {{ task.title }}</h3>
-    <p class"new_task_desc" editable-text="task.desc" onbeforesave="updateTask(task)">{{ "DESC: " + task.desc }}</p>
-    <p class"new_task_priority" editable-text="task.priority" onbeforesave="updateTask(task)">{{ "PRIORITY: " + task.priority }}</p>
-    <p class"new_task_assignedTo" editable-text="task.assignedTo" onbeforesave="updateTask(task)">{{ "ASSIGNED TO: " + task.assignedTo }}</p>
-    <p class"new_task_createBy">{{ "CREATED BY: " + task.createdBy.firstName }}</p>
+    <a href="#" ng-click="showDetails = ! showDetails"><h3 class="new_task_title"> >> {{ task.title }}</h3></a>
 
+      <div class="task-details" ng-class="{ 'hidden': ! showDetails }" ng-show="showDetails">
+        <p class"new_task_desc" editable-text="task.desc" onbeforesave="updateTask(task)"><span class="form-label">DESC: </span>{{ task.desc }}</p>
+        <p class"new_task_priority" editable-text="task.priority" onbeforesave="updateTask(task)"><span class="form-label">PRIORITY: </span>{{ task.priority }}</p>
+        <p class"new_task_assignedTo" editable-text="task.assignedTo" onbeforesave="updateTask(task)"><span class="form-label">ASSIGNED TO: </span>{{ task.assignedTo }}</p>
+        <p class"new_task_createBy"><span class="form-label">CREATED BY: </span>{{ task.createdBy.firstName }}</p>
+      </div>
+  </div>
 
   </div>
 
@@ -45,12 +52,15 @@
   <div class="singleTask" ng-repeat="task in tasksArray | filter:task.status='__status__done__'">
     <button type="button" ng-click="deleteTask(task._id)" class="delete-button">x</button>
     <button type="button" ng-click="MoveTaskInProgress(task)" class="update-status-btn"><<<</button>
-    <h3 class="new_task_title" editable-text="task.title" onbeforesave="updateTask(task)">>> {{ task.title }}</h3>
-    <p class"new_task_desc" editable-text="task.desc" onbeforesave="updateTask(task)">{{ "DESC: " + task.desc }}</p>
-    <p class"new_task_priority" editable-text="task.priority" onbeforesave="updateTask(task)">{{ "PRIORITY: " + task.priority }}</p>
-    <p class"new_task_assignedTo" editable-text="task.assignedTo" onbeforesave="updateTask(task)">{{ "ASSIGNED TO: " + task.assignedTo }}</p>
-    <p class"new_task_createBy">{{ "CREATED BY: " + task.createdBy.firstName }}</p>
 
+    <a href="#" ng-click="showDetails = ! showDetails"><h3 class="new_task_title"> >> {{ task.title }}</h3></a>
+
+      <div class="task-details" ng-class="{ 'hidden': ! showDetails }" ng-show="showDetails">
+        <p class"new_task_desc" editable-text="task.desc" onbeforesave="updateTask(task)"><span class="form-label">DESC: </span>{{ task.desc }}</p>
+        <p class"new_task_priority" editable-text="task.priority" onbeforesave="updateTask(task)"><span class="form-label">PRIORITY: </span>{{ task.priority }}</p>
+        <p class"new_task_assignedTo" editable-text="task.assignedTo" onbeforesave="updateTask(task)"><span class="form-label">ASSIGNED TO: </span>{{ task.assignedTo }}</p>
+        <p class"new_task_createBy"><span class="form-label">CREATED BY: </span>{{ task.createdBy.firstName }}</p>
+      </div>
   </div>
 
 </div>

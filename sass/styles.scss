@@ -151,6 +151,11 @@ a:hover {
   border-bottom: 5px solid $tertiary;
 }
 
+.new_task_title {
+  color: $tertiary;
+  font-family: Montserrat;
+}
+
 .singleTask {
   background-color: $neutral;
   border: 1px solid white;
@@ -164,23 +169,27 @@ a:hover {
 }
 
 .singleTask:hover {
-  height: 100%;
   -webkit-box-shadow: 6px 7px 29px 2px rgba(0,0,0,0.75);
   -moz-box-shadow: 6px 7px 29px 2px rgba(0,0,0,0.75);
   box-shadow: 6px 7px 29px 2px rgba(0,0,0,0.75);
 }
 
 .task-details {
-  display: inline;
+  max-height: 100%;
+  transition: .8s;
 }
 
 .task-details.hidden {
-  display: none;
+  max-height: 0;
 }
 
 .editable-input {
   // width: 100%;
   // background-color: red;
+}
+
+.form-label {
+  color: $secondary;
 }
 
 .delete-button {
