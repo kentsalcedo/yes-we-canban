@@ -102,4 +102,12 @@ angular.module('myApp')
       });
     };
 
+    $scope.showTask = function (task) {
+      if (task.show !== "true"){
+        task.show = "true";
+      } else {
+        task.show = "false";
+      }
+    };
+
 }]);

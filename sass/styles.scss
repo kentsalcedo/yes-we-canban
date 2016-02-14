@@ -7,7 +7,7 @@ $dark: #181A1B; //charcoal
 
 //MEDIA QUERY RANGES
 $large : "only screen and (max-width:1200px)";
-$medium : "only screen and (max-width:720px)";
+$medium : "only screen and (max-width:875px)";
 $mobile : "only screen and (max-width:480px)";
 
 //fonts
@@ -20,7 +20,6 @@ $mobile : "only screen and (max-width:480px)";
 
 * {
   box-sizing: border-box;
-
 }
 
 body {
@@ -31,13 +30,17 @@ body {
   font-family: Dosis;
 }
 
+a:-webkit-any-link {
+  text-decoration: none;
+}
+
 a {
   text-decoration: none;
   color: white;
 }
 
 a:hover {
-  color: red;
+  color: $secondary;
 }
 
 #navbar {
@@ -50,20 +53,24 @@ a:hover {
   box-shadow: 6px 7px 29px -2px rgba(0,0,0,0.75);
 }
 
+// #welcome-message {
+//   float: left;
+// }
+
 .nav-btn {
   // background-color: $main;
-  width: 70px;
+  // width: 70px;
   height: 50px;
   line-height: 50px;
   font-size: 20px;
   text-align: center;
-  // border-radius: 25px;
-  margin: 10px 5px 0px 5px;
+  font-family: Montserrat;
+  font-size: 16px;
+  margin: 10px 15px 0px 5px;
   bottom: 0;
 }
 
 .nav-btn:hover {
-  // background-color: red;
   border-bottom: 3px solid $secondary;
 }
 
@@ -72,7 +79,6 @@ a:hover {
 }
 
 .nav-addtask {
-  // background-color: $main;
   float: left;
   border-radius: 25px;
   width: 50px;
@@ -80,22 +86,42 @@ a:hover {
   font-size: 30px;
   margin-top: 0px;
   margin-bottom: 5px;
+  line-height: 50px;
 }
 
 .nav-login {
   float: right;
 }
 
+#logout-btn {
+  text-decoration: none;
+  cursor: auto;
+}
+
 #main {
   margin: auto;
+  min-height: 80vh;
+  max-height: 100%;
+  display : flex;
+  flex-flow : row wrap;
+  justify-content : center;
+}
+
+.full-bleed {
+  width: 100%;
+  height: 500px;
+  background-color: $neutral;
+  text-align: center;
+}
+
+.welcome {
+  line-height: 500px;
+  font-size: 150px;
+  font-family: Dosis;
 }
 
 .new-task-main {
   margin-top: 100px;
-}
-
-#main-task-container {
-  background-color: red;
 }
 
 #newTask {
@@ -104,25 +130,25 @@ a:hover {
 }
 
 .taskColumn {
-  background:rgba(255,255,255,0.6);
+  background:rgba(255,255,255,0.8);
   width: 31%;
   min-height: 80vh;
   height: 100%;
   float: left;
-  margin: 80px 10px 20px 10px;
-
+  margin: 80px 10px 30px 10px;
+  flex-direction: row;
 }
 
 .col-title {
-  background-color: $tertiary;
+  background-color: lighten($main,25%);
   text-align: center;
-  color: white;
+  color: $dark;
   font-size: 20px;
   line-height: 40px;
   width: 100%;
   height: 40px;
   font-family: Montserrat;
-  border-bottom: 5px solid $secondary;
+  border-bottom: 5px solid $tertiary;
 }
 
 .singleTask {
@@ -144,13 +170,26 @@ a:hover {
   box-shadow: 6px 7px 29px 2px rgba(0,0,0,0.75);
 }
 
+.task-details {
+  display: inline;
+}
+
+.task-details.hidden {
+  display: none;
+}
+
 .editable-input {
+  // width: 100%;
   // background-color: red;
-  width: 100%;
 }
 
 .delete-button {
   margin-top: 15px;
+  float: right;
+}
+
+.update-status-btn {
+  margin: 15px 5px 0px 0px;
   float: right;
 }
 
@@ -168,10 +207,6 @@ a:hover {
 
 //============= task block ==============
 
-.formTask {
-  // margin-left: 80px;
-}
-
 .new-task-main {
   padding: 10%;
 }
@@ -179,7 +214,6 @@ a:hover {
 .btn-group {
   margin: 10px;
 }
-
 
 .group_block {
   background-color: purple;
@@ -200,13 +234,24 @@ a:hover {
   width: 100%;
 }
 
+.btn-primary {
+  display: none;
+}
+
+.btn-default {
+  display: none;
+}
+
 #createBtn {
   margin-top: 8px;
 }
 
-// .btn-primary {
-//   display: none;}
-
-// .btn-default {
-//   display: none;
-// }
+#footer {
+  background-color: lighten($dark,10%);
+  min-height : 200px;
+  width : 100%;
+  margin-top: 15px;
+  bottom : 0;
+  left : 0;
+  box-shadow : rgba(0,0,0,.2) 5px 3px 5px 5px;
+}

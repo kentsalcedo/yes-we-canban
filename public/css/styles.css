@@ -14,12 +14,15 @@ body {
   padding: 0px;
   font-family: Dosis; }
 
+a:-webkit-any-link {
+  text-decoration: none; }
+
 a {
   text-decoration: none;
   color: white; }
 
 a:hover {
-  color: red; }
+  color: #B10000; }
 
 #navbar {
   width: 100%;
@@ -31,12 +34,13 @@ a:hover {
   box-shadow: 6px 7px 29px -2px rgba(0, 0, 0, 0.75); }
 
 .nav-btn {
-  width: 70px;
   height: 50px;
   line-height: 50px;
   font-size: 20px;
   text-align: center;
-  margin: 10px 5px 0px 5px;
+  font-family: Montserrat;
+  font-size: 16px;
+  margin: 10px 15px 0px 5px;
   bottom: 0; }
 
 .nav-btn:hover {
@@ -52,42 +56,61 @@ a:hover {
   height: 50px;
   font-size: 30px;
   margin-top: 0px;
-  margin-bottom: 5px; }
+  margin-bottom: 5px;
+  line-height: 50px; }
 
 .nav-login {
   float: right; }
 
+#logout-btn {
+  text-decoration: none;
+  cursor: auto; }
+
 #main {
-  margin: auto; }
+  margin: auto;
+  min-height: 80vh;
+  max-height: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center; }
+
+.full-bleed {
+  width: 100%;
+  height: 500px;
+  background-color: #FCFBE3;
+  text-align: center; }
+
+.welcome {
+  line-height: 500px;
+  font-size: 150px;
+  font-family: Dosis; }
 
 .new-task-main {
   margin-top: 100px; }
-
-#main-task-container {
-  background-color: red; }
 
 #newTask {
   border: 1px solid white;
   width: 100%; }
 
 .taskColumn {
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.8);
   width: 31%;
   min-height: 80vh;
   height: 100%;
   float: left;
-  margin: 80px 10px 20px 10px; }
+  margin: 80px 10px 30px 10px;
+  flex-direction: row; }
 
 .col-title {
-  background-color: #252C7E;
+  background-color: #faea78;
   text-align: center;
-  color: white;
+  color: #181A1B;
   font-size: 20px;
   line-height: 40px;
   width: 100%;
   height: 40px;
   font-family: Montserrat;
-  border-bottom: 5px solid #B10000; }
+  border-bottom: 5px solid #252C7E; }
 
 .singleTask {
   background-color: #FCFBE3;
@@ -104,11 +127,18 @@ a:hover {
   -moz-box-shadow: 6px 7px 29px 2px rgba(0, 0, 0, 0.75);
   box-shadow: 6px 7px 29px 2px rgba(0, 0, 0, 0.75); }
 
-.editable-input {
-  width: 100%; }
+.task-details {
+  display: inline; }
+
+.task-details.hidden {
+  display: none; }
 
 .delete-button {
   margin-top: 15px;
+  float: right; }
+
+.update-status-btn {
+  margin: 15px 5px 0px 0px;
   float: right; }
 
 .registerDiv {
@@ -141,5 +171,20 @@ a:hover {
 #new_group_name {
   width: 100%; }
 
+.btn-primary {
+  display: none; }
+
+.btn-default {
+  display: none; }
+
 #createBtn {
   margin-top: 8px; }
+
+#footer {
+  background-color: #303436;
+  min-height: 200px;
+  width: 100%;
+  margin-top: 15px;
+  bottom: 0;
+  left: 0;
+  box-shadow: rgba(0, 0, 0, 0.2) 5px 3px 5px 5px; }
