@@ -112,6 +112,10 @@ a:hover {
   font-family: Montserrat;
   border-bottom: 5px solid #252C7E; }
 
+.new_task_title {
+  color: #252C7E;
+  font-family: Montserrat; }
+
 .singleTask {
   background-color: #FCFBE3;
   border: 1px solid white;
@@ -122,16 +126,19 @@ a:hover {
   box-shadow: 6px 7px 29px -2px rgba(0, 0, 0, 0.75); }
 
 .singleTask:hover {
-  height: 100%;
   -webkit-box-shadow: 6px 7px 29px 2px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 6px 7px 29px 2px rgba(0, 0, 0, 0.75);
   box-shadow: 6px 7px 29px 2px rgba(0, 0, 0, 0.75); }
 
 .task-details {
-  display: inline; }
+  max-height: 100%;
+  transition: .8s; }
 
 .task-details.hidden {
-  display: none; }
+  max-height: 0; }
+
+.form-label {
+  color: #B10000; }
 
 .delete-button {
   margin-top: 15px;
