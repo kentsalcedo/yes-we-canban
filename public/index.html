@@ -10,14 +10,19 @@
 </head>
 <body ng-app="myApp">
   <div id="navbar" ng-controller="UserController">
+    <!-- <div id="welcome-message"><h3>Mabuhay {{ currentUserName }}! </h1></div> -->
     <div class="nav-btn nav-home"><a ng-href='/#/'>home</a></div>
     <div class="nav-addtask"><a ng-href='/#/tasks'>+</a></div>
     <div class="nav-btn nav-login"><a ng-href='/#/login'>login</a></div>
     <div class="nav-btn nav-login"><a ng-href='/#/register'>register</a></div>
-    <div class="nav-btn nav-login"><a ng-click='userLogout()' id="logout-btn">logout</a></div>
+    <div class="nav-btn nav-login"><a href="#" ng-click='userLogout()' id="logout-btn">logout</a></div>
   </div>
 
-  <div ng-view id="main"></div>
+  <div id="container">
+    <div ng-view id="main"></div>
+
+    <div id="footer"></div>
+  </div>
 
 
   <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>

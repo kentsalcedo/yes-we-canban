@@ -20,7 +20,6 @@ $mobile : "only screen and (max-width:480px)";
 
 * {
   box-sizing: border-box;
-
 }
 
 body {
@@ -54,20 +53,24 @@ a:hover {
   box-shadow: 6px 7px 29px -2px rgba(0,0,0,0.75);
 }
 
+#welcome-message {
+  float: left;
+}
+
 .nav-btn {
   // background-color: $main;
-  width: 70px;
+  // width: 70px;
   height: 50px;
   line-height: 50px;
   font-size: 20px;
   text-align: center;
-  // border-radius: 25px;
-  margin: 10px 5px 0px 5px;
+  font-family: Montserrat;
+  font-size: 16px;
+  margin: 10px 15px 0px 5px;
   bottom: 0;
 }
 
 .nav-btn:hover {
-  // background-color: red;
   border-bottom: 3px solid $secondary;
 }
 
@@ -76,7 +79,6 @@ a:hover {
 }
 
 .nav-addtask {
-  // background-color: $main;
   float: left;
   border-radius: 25px;
   width: 50px;
@@ -87,12 +89,13 @@ a:hover {
   line-height: 50px;
 }
 
-.nav-addtask: hover {
-  border: 0px;
-}
-
 .nav-login {
   float: right;
+}
+
+#logout-btn {
+  text-decoration: none;
+  cursor: auto;
 }
 
 #main {
@@ -119,20 +122,24 @@ a:hover {
   min-height: 80vh;
   height: 100%;
   float: left;
-  margin: 80px 10px 20px 10px;
+  margin: 80px 10px 50px 10px;
   flex-direction: row;
 }
 
 .col-title {
-  background-color: $tertiary;
+  background-color: lighten($main,20%);
   text-align: center;
-  color: white;
+  color: $dark;
   font-size: 20px;
   line-height: 40px;
   width: 100%;
   height: 40px;
   font-family: Montserrat;
-  border-bottom: 5px solid $secondary;
+  border-bottom: 5px solid $tertiary;
+
+  // -webkit-box-shadow: 6px 7px 29px 2px rgba(0,0,0,0.5);
+  // -moz-box-shadow: 6px 7px 29px 2px rgba(0,0,0,0.5);
+  // box-shadow: 6px 7px 29px 2px rgba(0,0,0,0.5);
 }
 
 .singleTask {
@@ -155,8 +162,8 @@ a:hover {
 }
 
 .editable-input {
+  // width: 100%;
   // background-color: red;
-  width: 100%;
 }
 
 .delete-button {
@@ -178,10 +185,6 @@ a:hover {
 
 //============= task block ==============
 
-.formTask {
-  // margin-left: 80px;
-}
-
 .new-task-main {
   padding: 10%;
 }
@@ -190,7 +193,6 @@ a:hover {
   margin: 10px;
 }
 
-
 .group_block {
   background-color: purple;
   flex-flow: row no wrap;
@@ -198,28 +200,36 @@ a:hover {
 
 #task_form_block {
   background-color: green;
+}
+
+.groupForm {
+  padding: 10px;
+  height: 100px;
+  width: 300px;
+}
+
+#new_group_name {
   width: 100%;
 }
 
 .btn-primary {
-  background-color: red;
-  display: none;}
-
-.btn-default {
-  background-color: red;
   display: none;
 }
 
-//=================================
+.btn-default {
+  display: none;
+}
+
+#createBtn {
+  margin-top: 8px;
+}
 
 #footer {
-  min-height : 35px;
+  background-color: lighten($tertiary,10%);
+  min-height : 200px;
   width : 100%;
-  background-color: $tertiary;
-  position : relative;
   margin-top: 15px;
   bottom : 0;
   left : 0;
-  opacity: 0.9;
   box-shadow : rgba(0,0,0,.2) 5px 3px 5px 5px;
 }

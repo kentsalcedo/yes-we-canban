@@ -1,9 +1,11 @@
 angular.module('myApp')
-  .controller('UserController', ['$location', '$http', '$scope', 'TaskService', function ($location, $http, $scope, TaskService) {
+  .controller('UserController', ['$rootScope', '$location', '$http', '$scope', 'TaskService', function ($rootScope, $location, $http, $scope, TaskService) {
 
     $scope.TaskService = TaskService;
 
     $scope.newUserArray = [];
+
+    $rootScope.currentUserName = "";
 
     $scope.addNewUser = function (newUser) {
       TaskService.addNewUser($scope.newUser)
@@ -16,16 +18,15 @@ angular.module('myApp')
     };
 
     $scope.userLogin = function (user) {
-      console.log("userRegister-controller.js", user);
-
       TaskService.userLogin(user)
       .success(function (data) {
-        console.log("don't come in hererrr!",data);
+        console.log(data);
         $location.path('/');
       })
       .catch(function (err) {
         console.error(err);
       });
+      $rootScope.currentUserName = "kent";
     };
 
     $scope.userLogout = function () {

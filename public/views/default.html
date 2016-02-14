@@ -2,14 +2,16 @@
 <div class="taskColumn">
   <div class="col-title">TO DO</div>
 
-  <div class="singleTask control-group" ng-repeat="task in tasksArray | filter:task.status='__status__toDo__'">
+  <div ng-submit="addTask()" class="singleTask control-group" ng-repeat="task in tasksArray | filter:task.status='__status__toDo__'">
     <button type="button" ng-click="deleteTask(task._id)" class="delete-button">x</button>
+    <button type="button" ng-click="MoveTaskInProgress(task)">>>></button>
+
     <h2 class="new_task_title" editable-text="task.title" onbeforesave="updateTask(task)">{{ task.title }}</h2>
     <p class"new_task_desc" editable-text="task.desc" onbeforesave="updateTask(task)">{{ "DESC: " + task.desc }}</p>
     <p class"new_task_priority" editable-text="task.priority" onbeforesave="updateTask(task)">{{ "PRIORITY: " + task.priority }}</p>
     <p class"new_task_assignedTo" editable-text="task.assignedTo" onbeforesave="updateTask(task)">{{ "ASSIGNED TO: " + task.assignedTo }}</p>
     <p class"new_task_createBy">{{ "CREATED BY: " + task.createdBy.firstName }}</p>
-    <button type="button" ng-click="MoveTaskInProgress(task)">>>></button>
+
   </div>
 
 </div>
