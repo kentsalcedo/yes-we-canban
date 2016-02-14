@@ -2,16 +2,18 @@
 <div class="taskColumn">
   <div class="col-title">TO DO</div>
 
-  <div ng-submit="addTask()" class="singleTask control-group" ng-repeat="task in tasksArray | filter:task.status='__status__toDo__'">
+  <div class="singleTask control-group" ng-repeat="task in tasksArray | filter:task.status='__status__toDo__'" ng-swith on=task.>
     <button type="button" ng-click="deleteTask(task._id)" class="delete-button">x</button>
-    <button type="button" ng-click="MoveTaskInProgress(task)">>>></button>
+    <button type="button" ng-click="MoveTaskInProgress(task)" class="update-status-btn">>>></button>
 
-    <h2 class="new_task_title" editable-text="task.title" onbeforesave="updateTask(task)">{{ task.title }}</h2>
-    <p class"new_task_desc" editable-text="task.desc" onbeforesave="updateTask(task)">{{ "DESC: " + task.desc }}</p>
-    <p class"new_task_priority" editable-text="task.priority" onbeforesave="updateTask(task)">{{ "PRIORITY: " + task.priority }}</p>
-    <p class"new_task_assignedTo" editable-text="task.assignedTo" onbeforesave="updateTask(task)">{{ "ASSIGNED TO: " + task.assignedTo }}</p>
-    <p class"new_task_createBy">{{ "CREATED BY: " + task.createdBy.firstName }}</p>
-
+    <h3 class="new_task_title" editable-text="task.title" onbeforesave="updateTask(task)" ng-click="showDetails = ! showDetails"> >> {{ task.title }}</h3>
+      <div class="task-details" ng-class="{ 'hidden': ! showDetails }" ng-show="showDetails">
+        <p class"new_task_desc" editable-text="task.desc" onbeforesave="updateTask(task)">{{ "DESC: " + task.desc }}</p>
+        <p class"new_task_priority" editable-text="task.priority" onbeforesave="updateTask(task)">{{ "PRIORITY: " + task.priority }}</p>
+        <p class"new_task_assignedTo" editable-text="task.assignedTo" onbeforesave="updateTask(task)">{{ "ASSIGNED TO: " + task.assignedTo }}</p>
+        <p class"new_task_createBy">{{ "CREATED BY: " + task.createdBy.firstName }}</p>
+        <!-- <p class"new_task_createBy">{{ "SHOW?: " + task.show }}</p> -->
+      </div>
   </div>
 
 </div>
@@ -22,14 +24,16 @@
 
   <div class="singleTask" ng-repeat="task in tasksArray | filter:task.status='__status__inProg__'">
     <button type="button" ng-click="deleteTask(task._id)" class="delete-button">x</button>
-    <h2 class="new_task_title" editable-text="task.title" onbeforesave="updateTask(task)">{{ task.title }}</h2>
+    <button type="button" ng-click="MoveTaskDone(task)" class="update-status-btn">>>></button>
+    <button type="button" ng-click="MoveTaskToDo(task)" class="update-status-btn"><<<</button>
+
+    <h3 class="new_task_title" editable-text="task.title" onbeforesave="updateTask(task)"> >> {{ task.title }}</h3>
     <p class"new_task_desc" editable-text="task.desc" onbeforesave="updateTask(task)">{{ "DESC: " + task.desc }}</p>
     <p class"new_task_priority" editable-text="task.priority" onbeforesave="updateTask(task)">{{ "PRIORITY: " + task.priority }}</p>
     <p class"new_task_assignedTo" editable-text="task.assignedTo" onbeforesave="updateTask(task)">{{ "ASSIGNED TO: " + task.assignedTo }}</p>
     <p class"new_task_createBy">{{ "CREATED BY: " + task.createdBy.firstName }}</p>
 
-    <button type="button" ng-click="MoveTaskToDo(task)"><<<</button>
-    <button type="button" ng-click="MoveTaskDone(task)">>>></button>
+
   </div>
 
 </div>
@@ -40,13 +44,13 @@
 
   <div class="singleTask" ng-repeat="task in tasksArray | filter:task.status='__status__done__'">
     <button type="button" ng-click="deleteTask(task._id)" class="delete-button">x</button>
-    <h2 class="new_task_title" editable-text="task.title" onbeforesave="updateTask(task)">{{ task.title }}</h2>
+    <button type="button" ng-click="MoveTaskInProgress(task)" class="update-status-btn"><<<</button>
+    <h3 class="new_task_title" editable-text="task.title" onbeforesave="updateTask(task)">>> {{ task.title }}</h3>
     <p class"new_task_desc" editable-text="task.desc" onbeforesave="updateTask(task)">{{ "DESC: " + task.desc }}</p>
     <p class"new_task_priority" editable-text="task.priority" onbeforesave="updateTask(task)">{{ "PRIORITY: " + task.priority }}</p>
     <p class"new_task_assignedTo" editable-text="task.assignedTo" onbeforesave="updateTask(task)">{{ "ASSIGNED TO: " + task.assignedTo }}</p>
     <p class"new_task_createBy">{{ "CREATED BY: " + task.createdBy.firstName }}</p>
 
-    <button type="button" ng-click="MoveTaskInProgress(task)"><<<</button>
   </div>
 
 </div>

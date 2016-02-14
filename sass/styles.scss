@@ -7,7 +7,7 @@ $dark: #181A1B; //charcoal
 
 //MEDIA QUERY RANGES
 $large : "only screen and (max-width:1200px)";
-$medium : "only screen and (max-width:720px)";
+$medium : "only screen and (max-width:875px)";
 $mobile : "only screen and (max-width:480px)";
 
 //fonts
@@ -53,9 +53,9 @@ a:hover {
   box-shadow: 6px 7px 29px -2px rgba(0,0,0,0.75);
 }
 
-#welcome-message {
-  float: left;
-}
+// #welcome-message {
+//   float: left;
+// }
 
 .nav-btn {
   // background-color: $main;
@@ -107,6 +107,19 @@ a:hover {
   justify-content : center;
 }
 
+.full-bleed {
+  width: 100%;
+  height: 500px;
+  background-color: $neutral;
+  text-align: center;
+}
+
+.welcome {
+  line-height: 500px;
+  font-size: 150px;
+  font-family: Dosis;
+}
+
 .new-task-main {
   margin-top: 100px;
 }
@@ -117,17 +130,17 @@ a:hover {
 }
 
 .taskColumn {
-  background:rgba(255,255,255,0.6);
+  background:rgba(255,255,255,0.8);
   width: 31%;
   min-height: 80vh;
   height: 100%;
   float: left;
-  margin: 80px 10px 50px 10px;
+  margin: 80px 10px 30px 10px;
   flex-direction: row;
 }
 
 .col-title {
-  background-color: lighten($main,20%);
+  background-color: lighten($main,25%);
   text-align: center;
   color: $dark;
   font-size: 20px;
@@ -136,10 +149,6 @@ a:hover {
   height: 40px;
   font-family: Montserrat;
   border-bottom: 5px solid $tertiary;
-
-  // -webkit-box-shadow: 6px 7px 29px 2px rgba(0,0,0,0.5);
-  // -moz-box-shadow: 6px 7px 29px 2px rgba(0,0,0,0.5);
-  // box-shadow: 6px 7px 29px 2px rgba(0,0,0,0.5);
 }
 
 .singleTask {
@@ -161,6 +170,14 @@ a:hover {
   box-shadow: 6px 7px 29px 2px rgba(0,0,0,0.75);
 }
 
+.task-details {
+  display: inline;
+}
+
+.task-details.hidden {
+  display: none;
+}
+
 .editable-input {
   // width: 100%;
   // background-color: red;
@@ -168,6 +185,11 @@ a:hover {
 
 .delete-button {
   margin-top: 15px;
+  float: right;
+}
+
+.update-status-btn {
+  margin: 15px 5px 0px 0px;
   float: right;
 }
 
@@ -225,7 +247,7 @@ a:hover {
 }
 
 #footer {
-  background-color: lighten($tertiary,10%);
+  background-color: lighten($dark,10%);
   min-height : 200px;
   width : 100%;
   margin-top: 15px;
