@@ -36,9 +36,60 @@
          </form>
        </div>
        </div>
-
     </div>
-    <div class="nav-btn nav-login"><a ng-href='/#/register'>register</a></div>
+
+    <div class="nav-btn nav-login">
+      <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      register
+      </button>
+      <div class="dropdown-menu">
+        <div class="registerDiv">
+          <form class="registerForm" ng-submit="addNewUser(newUser)" ng-model="newUser">
+            <fieldset>
+              <div class="firstnameForm">
+                <label for="nameForm">First Name</label>
+                <div class="inputBox">
+                  <input id="nameForm" type="text" ng-model="newUser.firstName"/>
+                </div>
+              </div>
+
+              <div class="lastnameForm">
+                <label for="lastnameForm">Last Name</label>
+                <div class="inputBox">
+                  <input id="lastnameForm" type="text" ng-model="newUser.lastName"/>
+                </div>
+              </div>
+
+              <div class="emailForm">
+                <label for="emailForm">Email</label>
+                <div class="inputBox">
+                  <input id="emailForm" type="text" ng-model="newUser.email"/>
+                </div>
+              </div>
+
+              <div class="userNameForm">
+                <label for="userNameForm">Username</label>
+                <div class="inputBox">
+                  <input id="userNameForm" type="text" ng-model="newUser.username"/>
+                </div>
+              </div>
+
+              <div class="pwForm">
+                <label for="pwForm">Password</label>
+                <div class="inputBox">
+                  <input id="pwForm" type="password" ng-model="newUser.password"/>
+                </div>
+              </div>
+
+              <div class="commit">
+                <button type="submit">Register</button>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
+
     <div class="nav-btn nav-login"><a href="#" ng-click='userLogout()' id="logout-btn">logout</a></div>
   </div>
 

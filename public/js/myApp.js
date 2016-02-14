@@ -30,7 +30,7 @@ myApp
       controller : 'UserController'
     })
     .when('/register', {
-      templateUrl : 'views/register.html',
+      // templateUrl : 'views/register.html',
       controller : 'UserController'
     })
     .when('/api/users', {
