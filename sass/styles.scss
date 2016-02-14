@@ -188,7 +188,20 @@ a:hover {
 
 #task_form_block {
   background-color: green;
+}
+
+.groupForm {
+  padding: 10px;
+  height: 100px;
+  width: 300px;
+}
+
+#new_group_name {
   width: 100%;
+}
+
+#createBtn {
+  margin-top: 8px;
 }
 
 // .btn-primary {
