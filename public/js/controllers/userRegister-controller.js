@@ -1,5 +1,5 @@
 angular.module('myApp')
-  .controller('UserController', ['$rootScope', '$location', '$http', '$scope', 'TaskService', function ($rootScope, $location, $http, $scope, TaskService) {
+  .controller('UserController', ['$window','$route','$rootScope', '$location', '$http', '$scope', 'TaskService', function ($window, $route, $rootScope, $location, $http, $scope, TaskService) {
 
     $scope.TaskService = TaskService;
 
@@ -22,11 +22,12 @@ angular.module('myApp')
       .success(function (data) {
         console.log(data);
         $location.path('/');
+
       })
       .catch(function (err) {
         console.error(err);
       });
-      $rootScope.currentUserName = "kent";
+      $window.location.reload();
     };
 
     $scope.userLogout = function () {

@@ -17,6 +17,7 @@ angular.module('myApp')
         .success(function (data) {
           TaskService.allTasks().success(function (allTasks) {
             $scope.tasksArray = allTasks;
+            $scope.new_task = {};
             $location.path('/');
           });
         })
