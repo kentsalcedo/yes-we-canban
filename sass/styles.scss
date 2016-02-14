@@ -50,7 +50,7 @@ a:hover {
   position: absolute;
   top: 0;
   left: 0;
-  box-shadow: 6px 7px 29px -2px rgba(0,0,0,0.75);
+  box-shadow: -5px 7px 29px -2px rgba(0,0,0,0.75);
 }
 
 // #welcome-message {
@@ -78,15 +78,15 @@ a:hover {
   float: right;
 }
 
-.nav-addtask {
+.addtask {
   float: left;
-  border-radius: 25px;
-  width: 50px;
-  height: 50px;
-  font-size: 30px;
-  margin-top: 0px;
-  margin-bottom: 5px;
-  line-height: 50px;
+  // border-radius: 25px;
+  // width: 50px;
+  // height: 50px;
+  // font-size: 30px;
+  // margin-top: 0px;
+  // margin-bottom: 5px;
+  // line-height: 50px;
 }
 
 .nav-login {
@@ -121,7 +121,6 @@ a:hover {
 }
 
 .new-task-main {
-  // margin-top: 100px;
   background-color: pink;
 }
 
@@ -160,9 +159,7 @@ a:hover {
 .singleTask {
   background-color: $neutral;
   border: 1px solid white;
-  // overflow: hidden;
   margin: 15px;
-  // height: 70px;
   padding: 0px 10px 10px 10px;
   -webkit-box-shadow: 6px 7px 29px -2px rgba(0,0,0,0.75);
   -moz-box-shadow: 6px 7px 29px -2px rgba(0,0,0,0.75);
@@ -227,13 +224,19 @@ a:hover {
 }
 
 #task_form_block {
-  background-color: green;
+  // background-color: $tertiary;
+  width: 400px;
+  text-align: center;
 }
 
 .groupForm {
   padding: 10px;
   height: 100px;
   width: 300px;
+}
+
+#new_task_desc {
+  height: 100px;
 }
 
 #new_group_name {
@@ -252,6 +255,34 @@ a:hover {
   margin-top: 8px;
 }
 
+div.dropdown-menu {
+  position: fixed;
+  width: 400px; /* Set your desired with */
+  z-index: 2; /* Make sure its above other items. */
+  top: 15%;
+  left: 20px;
+  border: 2px solid #555555;
+  background-color: #ccc;
+  border-radius: 5px;
+  text-align: center;
+  line-height: 30px;
+
+  input {
+    border: 0px;
+    text-align: center;
+    width: 90%;
+    margin: 10px;
+  }
+
+  textarea {
+    border: 0px;
+    text-align: center;
+    wrap: hard;
+    width: 90%;
+    margin-top: 10px;
+  }
+}
+
 #footer {
   background-color: lighten($dark,10%);
   min-height : 200px;
@@ -259,5 +290,4 @@ a:hover {
   margin-top: 15px;
   bottom : 0;
   left : 0;
-  box-shadow : rgba(0,0,0,.2) 5px 3px 5px 5px;
 }
