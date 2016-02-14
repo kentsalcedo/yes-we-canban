@@ -12,7 +12,32 @@
   <div id="navbar" ng-controller="UserController">
     <!-- <div id="welcome-message"><h3>Mabuhay {{ currentUserName }}! </h1></div> -->
     <div class="nav-btn nav-home"><a ng-href='/#/'>home</a></div>
-    <div class="nav-btn nav-login"><a ng-href='/#/login'>login</a></div>
+
+    <div class="nav-btn nav-login">
+      <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      login
+      </button>
+       <div class="dropdown-menu">
+       <div class="loginDiv">
+         <form class="loginForm" ng-submit="userLogin(user)">
+           <fieldset>
+             <div class="userNameForm">
+               <label for="userNameForm">Username</label>
+               <input id="userNameForm" type="text" ng-model="user.username" />
+             </div>
+
+             <div class="pwForm">
+               <label for="pwForm">Password</label>
+               <input id="pwForm" type="password" ng-model="user.password" />
+             </div>
+
+             <button type="submit">Login</button>
+           </fieldset>
+         </form>
+       </div>
+       </div>
+
+    </div>
     <div class="nav-btn nav-login"><a ng-href='/#/register'>register</a></div>
     <div class="nav-btn nav-login"><a href="#" ng-click='userLogout()' id="logout-btn">logout</a></div>
   </div>
