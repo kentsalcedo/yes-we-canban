@@ -31,7 +31,7 @@ a:hover {
   position: absolute;
   top: 0;
   left: 0;
-  box-shadow: 6px 7px 29px -2px rgba(0, 0, 0, 0.75); }
+  box-shadow: -5px 7px 29px -2px rgba(0, 0, 0, 0.75); }
 
 .nav-btn {
   height: 50px;
@@ -49,15 +49,8 @@ a:hover {
 .nav-home {
   float: right; }
 
-.nav-addtask {
-  float: left;
-  border-radius: 25px;
-  width: 50px;
-  height: 50px;
-  font-size: 30px;
-  margin-top: 0px;
-  margin-bottom: 5px;
-  line-height: 50px; }
+.addtask {
+  float: left; }
 
 .nav-login {
   float: right; }
@@ -165,12 +158,16 @@ a:hover {
   flex-flow: row no wrap; }
 
 #task_form_block {
-  background-color: green; }
+  width: 400px;
+  text-align: center; }
 
 .groupForm {
   padding: 10px;
   height: 100px;
   width: 300px; }
+
+#new_task_desc {
+  height: 100px; }
 
 #new_group_name {
   width: 100%; }
@@ -184,11 +181,35 @@ a:hover {
 #createBtn {
   margin-top: 8px; }
 
+div.dropdown-menu {
+  position: fixed;
+  width: 400px;
+  /* Set your desired with */
+  z-index: 2;
+  /* Make sure its above other items. */
+  top: 15%;
+  left: 20px;
+  border: 2px solid #555555;
+  background-color: #ccc;
+  border-radius: 5px;
+  text-align: center;
+  line-height: 30px; }
+  div.dropdown-menu input {
+    border: 0px;
+    text-align: center;
+    width: 90%;
+    margin: 10px; }
+  div.dropdown-menu textarea {
+    border: 0px;
+    text-align: center;
+    wrap: hard;
+    width: 90%;
+    margin-top: 10px; }
+
 #footer {
   background-color: #303436;
   min-height: 200px;
   width: 100%;
   margin-top: 15px;
   bottom: 0;
-  left: 0;
-  box-shadow: rgba(0, 0, 0, 0.2) 5px 3px 5px 5px; }
+  left: 0; }

@@ -5,7 +5,7 @@
 
 <div class="taskColumn">
   <div class="col-title" ng-submit="addTask()">TO DO
-    <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <button type="button" class="btn btn-secondary dropdown-toggle addtask" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       +
       </button>
        <div class="dropdown-menu">
@@ -13,23 +13,20 @@
            <form class="formTask">
              <fieldset>
                <div class="new_task_title">
-                 <label for="new_task_title">New Task Title</label>
-                 <div><input id="new_task_title" type="text" ng-model="new_task.title" /></div>
+                 <!-- <label for="new_task_title">New Task Title</label> -->
+                 <div><input id="new_task_title" type="text" ng-model="new_task.title" placeholder="title" /></div>
                </div>
 
                <div class="new_task_desc">
-                 <label for="new_task_desc">Description</label>
-                 <div><input id="new_task_desc" type="text" ng-model="new_task.desc" /></div>
+                 <div><textarea id="new_task_desc" type="text" ng-model="new_task.desc" placeholder="description"/></div>
                </div>
 
                <div class="new_task_priority">
-                 <label for="new_task_priority">Priority</label>
-                 <div><input id="new_task_priority" type="text" ng-model="new_task.priority" /></div>
+                 <div><input id="new_task_priority" type="text" ng-model="new_task.priority" placeholder="priority"/></div>
                </div>
 
                <div class="new_task_assignedTo">
-                 <label for="new_task_assignedTo">Assigned To</label>
-                 <div><input id="new_task_assignedTo" type="text" ng-model="new_task.assignedTo" /></div>
+                 <div><input id="new_task_assignedTo" type="text" ng-model="new_task.assignedTo" placeholder="assigned to"/></div>
                </div>
 
                <button type="submit">Add Task</button>
