@@ -18,7 +18,7 @@ myApp
       controller : 'TaskController'
     })
     .when('/tasks', {
-      templateUrl  : 'views/tasks.html',
+      // templateUrl  : 'views/tasks.html',
       controller : 'TaskController'
     })
     .when('/api/add', {
