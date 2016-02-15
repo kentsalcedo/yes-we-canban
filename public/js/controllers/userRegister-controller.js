@@ -37,6 +37,7 @@ angular.module('myApp')
         .catch(function (err) {
           console.error(err);
         });
+      $window.location.reload();
     };
 
   }]);
