@@ -21,8 +21,6 @@ var session    = require('express-session');
 app.use(bodyParser.json());
 app.use(express.static('./public'));
 
-var deployed
-
 app.use(session({
   "secret" : process.env.SECRET,
   "saveUninitialized" : true,
