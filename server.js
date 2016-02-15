@@ -11,7 +11,10 @@ var plm        = require('passport-local-mongoose');
 var LocalStrategy  = require( 'passport-local' ).Strategy;
 var users      = require('./db/Users');
 var todos      = require('./db/tasks');
-// var sConfig = require('./config/express-session-config.json');
+var env = process.env.NODE_ENV || 'development';
+if(env === 'development'){
+  var sConfig = require('./config/express-session-config.json');
+}
 
 var session    = require('express-session');
 
