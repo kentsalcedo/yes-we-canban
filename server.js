@@ -11,32 +11,26 @@ var plm        = require('passport-local-mongoose');
 var LocalStrategy  = require( 'passport-local' ).Strategy;
 var users      = require('./db/Users');
 var todos      = require('./db/tasks');
-var sConfig = require('./config/express-session-config.json');
+// var sConfig = require('./config/express-session-config.json');
 
-//required by RIZ
-// var cookieParser = require('cookie-parser');
 var session    = require('express-session');
-//=======
 
 app.use(bodyParser.json());
 app.use(express.static('./public'));
 
-//======Riz
-// app.use(cookieParser());
-app.use(session(sConfig));
-//=======
+app.use(session({
+  "secret" : secret,
+  "saveUninitialized" : true,
+  "resave" : true
+}));
+// app.use(session(sConfig));
 
-// //Initialize passport project in express
+
 app.use(passport.initialize());
 
-// //set passport session middleware to persist login sessions
 app.use(passport.session());
 
-// //in order to maintain persistent login session, the authenticated user must be serialized
-// //to the session. The user will be deserialized when each subsequent request is made.
 passport.serializeUser(function (user, done){
-//   // user is passed in from Local Strategy
-//   // user is attached to req.user
   return done(null, user);
 });
 
