@@ -22,12 +22,10 @@ app.use(bodyParser.json());
 app.use(express.static('./public'));
 
 app.use(session({
-  "secret" : process.env.SECRET,
+  "secret" : process.env.SECRET || sConfig.secret,
   "saveUninitialized" : true,
   "resave" : true
 }));
-// app.use(session(sConfig));
-
 
 app.use(passport.initialize());
 
