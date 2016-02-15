@@ -6,8 +6,8 @@ var mongolabURL = 'mongodb://' + process.env.MONGOLAB_USERNAME + ':' + process.e
 var uristring =
   process.env.MONGOLAB_URI ||
   process.env.MONGOHQ_URL ||
-    // 'mongodb://localhost/tasksDataBase';
-    mongolabURL;
+    'mongodb://localhost/tasksDataBase';
+    // mongolabURL;
 
 
 Mongoose.connect(uristring,function(err,res){
