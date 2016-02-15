@@ -22,7 +22,7 @@ app.use(bodyParser.json());
 app.use(express.static('./public'));
 
 app.use(session({
-  // "secret" : secret,
+  "secret" : SECRET,
   "saveUninitialized" : true,
   "resave" : true
 }));
