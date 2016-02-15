@@ -25,10 +25,6 @@ myApp
       templateUrl : '/views/default.html',
       controller : 'TaskController'
     })
-    .when('/login', {
-      // templateUrl : 'views/login.html',
-      controller : 'UserController'
-    })
     .when('/register', {
       // templateUrl : 'views/register.html',
       controller : 'UserController'

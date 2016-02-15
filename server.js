@@ -90,7 +90,7 @@ app.put('/api/update', auth, function(req, res) {
 
 //============ register user ===================
 
-app.get('/api/users', function (req, res) {
+app.get('/api/users', auth, function (req, res) {
   users.find(function (err, data) {
     if (err) return console.error(err);
     res.json(data);

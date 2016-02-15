@@ -49,9 +49,6 @@ a:hover {
 .nav-home {
   float: right; }
 
-.addtask {
-  float: left; }
-
 .nav-login {
   float: right; }
 
@@ -141,15 +138,6 @@ a:hover {
   margin: 15px 5px 0px 0px;
   float: right; }
 
-.registerDiv {
-  margin-top: 100px; }
-
-.loginDiv {
-  margin-top: 100px; }
-
-.notfound {
-  margin-top: 100px; }
-
 .btn-group {
   margin: 10px; }
 
@@ -158,7 +146,6 @@ a:hover {
   flex-flow: row no wrap; }
 
 #task_form_block {
-  width: 400px;
   text-align: center; }
 
 .groupForm {
@@ -183,17 +170,16 @@ a:hover {
 
 div.dropdown-menu {
   position: fixed;
-  width: 400px;
-  /* Set your desired with */
   z-index: 2;
   /* Make sure its above other items. */
-  top: 15%;
-  left: 20px;
   border: 2px solid #555555;
   background-color: #ccc;
   border-radius: 5px;
   text-align: center;
-  line-height: 30px; }
+  line-height: 30px;
+  width: 400px;
+  /* Set your desired with */
+  top: 25%; }
   div.dropdown-menu input {
     border: 0px;
     text-align: center;
@@ -206,10 +192,39 @@ div.dropdown-menu {
     width: 90%;
     margin-top: 10px; }
 
+.newtask-form {
+  position: fixed;
+  width: 400px;
+  /* Set your desired with */
+  top: 15%;
+  left: 20px; }
+
+.login-form {
+  position: fixed;
+  width: 400px;
+  /* Set your desired with */
+  top: 15%; }
+
+.btn {
+  background: transparent; }
+
+.addtask {
+  float: left;
+  background-color: #b8a307;
+  max-height: 100%;
+  font-size: 25px;
+  line-height: 25px; }
+
+.regFormContainer {
+  position: absolute;
+  z-index: 2;
+  /* Make sure its above other items. */
+  top: 50%;
+  left: 500px; }
+
 #footer {
   background-color: #303436;
   min-height: 200px;
   width: 100%;
   margin-top: 15px;
-  bottom: 0;
-  left: 0; }
+  text-align: center; }

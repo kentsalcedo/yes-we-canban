@@ -5,7 +5,7 @@ angular.module('myApp')
 
     $scope.newUserArray = [];
 
-    $rootScope.currentUserName = "";
+    // $rootScope.currentUserName = "";
 
     $scope.addNewUser = function (newUser) {
       TaskService.addNewUser($scope.newUser)
@@ -20,7 +20,6 @@ angular.module('myApp')
     $scope.userLogin = function (user) {
       TaskService.userLogin(user)
       .success(function (data) {
-        console.log(data);
         $location.path('/');
 
       })
@@ -31,10 +30,9 @@ angular.module('myApp')
     };
 
     $scope.userLogout = function () {
-      console.log('controller: logout');
       TaskService.userLogout()
         .success(function (data) {
-          $location.path('/login');
+          $location.path('/');
         })
         .catch(function (err) {
           console.error(err);

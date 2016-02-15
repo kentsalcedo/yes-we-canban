@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Yes We CanBan</title>
+  <title>YWK</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
   <link rel="stylesheet" href="/css/styles.css">
 
@@ -16,7 +16,7 @@
       <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       login
       </button>
-       <div class="dropdown-menu">
+       <div class="dropdown-menu login-form">
        <div class="loginDiv">
          <form class="loginForm" ng-submit="userLogin(user)">
            <fieldset>
@@ -41,42 +41,37 @@
       <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       register
       </button>
-      <div class="dropdown-menu">
+      <div class="dropdown-menu regFormContainer">
         <div class="registerDiv">
           <form class="registerForm" ng-submit="addNewUser(newUser)" ng-model="newUser">
             <fieldset>
               <div class="firstnameForm">
-                <label for="nameForm">First Name</label>
                 <div class="inputBox">
-                  <input id="nameForm" type="text" ng-model="newUser.firstName"/>
+                  <input id="nameForm" type="text" ng-model="newUser.firstName" placeholder="first name" />
                 </div>
               </div>
 
               <div class="lastnameForm">
-                <label for="lastnameForm">Last Name</label>
                 <div class="inputBox">
-                  <input id="lastnameForm" type="text" ng-model="newUser.lastName"/>
+                  <input id="lastnameForm" type="text" ng-model="newUser.lastName" placeholder="last name"/>
                 </div>
               </div>
 
               <div class="emailForm">
-                <label for="emailForm">Email</label>
                 <div class="inputBox">
-                  <input id="emailForm" type="text" ng-model="newUser.email"/>
+                  <input id="emailForm" type="text" ng-model="newUser.email" placeholder="email"/>
                 </div>
               </div>
 
               <div class="userNameForm">
-                <label for="userNameForm">Username</label>
                 <div class="inputBox">
-                  <input id="userNameForm" type="text" ng-model="newUser.username"/>
+                  <input id="userNameForm" type="text" ng-model="newUser.username" placeholder="username" />
                 </div>
               </div>
 
               <div class="pwForm">
-                <label for="pwForm">Password</label>
                 <div class="inputBox">
-                  <input id="pwForm" type="password" ng-model="newUser.password"/>
+                  <input id="pwForm" type="password" ng-model="newUser.password" placeholder="password" />
                 </div>
               </div>
 
@@ -89,7 +84,10 @@
       </div>
     </div>
 
-    <div class="nav-btn nav-login"><a href="#" ng-click='userLogout()' id="logout-btn">logout</a></div>
+    <div class="nav-btn nav-login"><a href="#" ng-click='userLogout()' id="logout-btn">logout</a>
+
+
+    </div>
   </div>
 
   <div id="container">
