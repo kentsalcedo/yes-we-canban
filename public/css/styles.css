@@ -4,6 +4,7 @@
 @import url(https://fonts.googleapis.com/css?family=Qwigley);
 @import url(https://fonts.googleapis.com/css?family=Dosis);
 @import url(https://fonts.googleapis.com/css?family=Lato);
+@import url("http://getbootstrap.com/dist/css/bootstrap.css");
 * {
   box-sizing: border-box; }
 
@@ -177,9 +178,6 @@ span.todo {
   padding: 10px;
   height: 100px;
   width: 300px; }
-
-#new_task_desc {
-  height: 100px; }
 
 #new_group_name {
   width: 100%; }

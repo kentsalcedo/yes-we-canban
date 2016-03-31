@@ -2,7 +2,7 @@
 
 angular.module('myApp')
 .controller('TaskController', ['$location','$http','$scope','TaskService',
-  function ($location, $http, $scope, TaskService, MoveTask) {
+  function ($location, $http, $scope, TaskService, MoveTask, ModalService) {
     $scope.TaskService = TaskService;
 
     $scope.tasksArray = [];
@@ -110,5 +110,19 @@ angular.module('myApp')
         task.show = "false";
       }
     };
+
+    $scope.show = function() {
+            ModalService.showModal({
+                templateUrl: 'modal.html',
+                controller: "ModalController"
+            }).then(function(modal) {
+                modal.element.modal();
+                modal.close.then(function(result) {
+                    $scope.message = "You said " + result;
+                });
+            });
+        };
+
+
 
 }]);

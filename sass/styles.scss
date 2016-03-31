@@ -18,6 +18,17 @@ $mobile : "only screen and (min-width:580px)";
 @import url(https://fonts.googleapis.com/css?family=Dosis);
 @import url(https://fonts.googleapis.com/css?family=Lato);
 
+@import url('http://getbootstrap.com/dist/css/bootstrap.css');
+
+
+@mixin backColor($first, $next) {
+  background: $first;
+  background: -webkit-linear-gradient(left top, $first, $next);
+  background: -o-linear-gradient(bottom right, $first, $next);
+  background: -moz-linear-gradient(bottom right, $first, $next);
+  background: linear-gradient(to bottom right, $first, $next);
+}
+
 * {
   box-sizing: border-box;
 }
@@ -263,7 +274,7 @@ span.todo {
 }
 
 #new_task_desc {
-  height: 100px;
+  // height: 100px;
 }
 
 #new_group_name {
