@@ -1,17 +1,17 @@
 
-var express    = require('express');
-var app        = express();
-var PORT       = process.env.PORT || 3001;
-var db         = require('./db/mongo');
-var bodyParser = require('body-parser');
-var Mongoose   = require('mongoose');
-var bcrypt     = require('bcrypt');
-var passport   = require('passport');
-var plm        = require('passport-local-mongoose');
-var LocalStrategy  = require( 'passport-local' ).Strategy;
-var users      = require('./db/Users');
-var todos      = require('./db/tasks');
-var env = process.env.NODE_ENV || 'development';
+var express       = require('express');
+var app           = express();
+var PORT          = process.env.PORT || 3001;
+var db            = require('./db/mongo');
+var bodyParser    = require('body-parser');
+var Mongoose      = require('mongoose');
+var bcrypt        = require('bcrypt');
+var passport      = require('passport');
+var plm           = require('passport-local-mongoose');
+var LocalStrategy = require( 'passport-local' ).Strategy;
+var users         = require('./db/Users');
+var todos         = require('./db/tasks');
+var env           = process.env.NODE_ENV || 'development';
 if(env === 'development'){
   var sConfig = require('./config/express-session-config.json');
 }
