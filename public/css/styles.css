@@ -43,7 +43,6 @@ a:hover {
   line-height: 50px;
   font-size: 20px;
   text-align: center;
-  font-family: Montserrat;
   font-size: 16px;
   margin: 10px 15px 0px 5px;
   bottom: 0; }
@@ -164,12 +163,27 @@ span.todo {
 .delete-button {
   margin-top: 6.5px; }
 
-#hover-content {
+#signUpContent {
   display: none; }
 
-#hover-me:hover #hover-content {
+#loginContent {
+  display: none; }
+
+#hover_sign:hover #signUpContent {
   display: block;
-  position: absolute; }
+  position: absolute;
+  right: 10px; }
+
+#hover_login:hover #loginContent {
+  display: block;
+  position: absolute;
+  right: 10px; }
+
+#hover_sign {
+  float: right; }
+
+#hover_login {
+  float: right; }
 
 .btn-group {
   margin: 10px; }
@@ -183,7 +197,7 @@ span.todo {
   z-index: 5;
   background-color: white;
   width: 300px;
-  padding: 5px;
+  padding: 10px;
   -webkit-box-shadow: 6px 7px 29px 2px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 6px 7px 29px 2px rgba(0, 0, 0, 0.75);
   box-shadow: 6px 7px 29px 2px rgba(0, 0, 0, 0.75); }
@@ -194,7 +208,10 @@ textarea[type=text] {
   float: left;
   margin-top: 8px;
   border-style: none;
-  border-bottom: 1px solid #4A5A80; }
+  border-bottom: 1px solid #4A5A80;
+  height: 30px;
+  line-height: 35px;
+  font-size: 15px; }
 
 .addTaskBtn {
   float: right;

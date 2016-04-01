@@ -15,36 +15,32 @@
     <div class="nav-btn nav-home"><a ng-href='/#/'>home</a></div>
     <div class="nav-btn nav-login"><a href="#" ng-click='userLogout()' id="logout-btn">logout</a></div>
 
-    <div class="nav-btn nav-login">
-      <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      login
-      </button>
-       <div class="dropdown-menu login-form">
-       <div class="loginDiv">
+    <div id="hover_login" class="nav-btn">
+      <span>login</span>
+       <!-- <div class="dropdown-menu login-form"> -->
+       <div id="loginContent" class="form_block">
          <form class="loginForm" ng-submit="userLogin(user)">
            <fieldset>
              <div class="userNameForm">
-               <label for="userNameForm">Username</label>
-               <input id="userNameForm" type="text" ng-model="user.username" />
+               <label for="userNameForm" ></label>
+               <input id="userNameForm" placeholder="username" type="text" ng-model="user.username" />
              </div>
 
              <div class="pwForm">
-               <label for="pwForm">Password</label>
-               <input id="pwForm" type="password" ng-model="user.password" />
+               <label for="pwForm"></label>
+               <input id="pwForm" placeholder="password" type="password" ng-model="user.password" />
              </div>
 
              <button type="submit">Login</button>
            </fieldset>
          </form>
        </div>
-       </div>
+       <!-- </div> -->
     </div>
 
-    <div class="nav-btn nav-login">
-      <div id="hover-me">
+      <div id="hover_sign" class="nav-btn">
         <span>sign-up</span>
-      <!-- <div class="dropdown-menu regFormContainer"> -->
-        <div id="hover-content" class="form_block">
+        <div id="signUpContent" class="form_block">
           <form class="registerForm" ng-submit="addNewUser(newUser)" ng-model="newUser">
             <fieldset>
               <div class="firstnameForm">
@@ -84,9 +80,7 @@
           </form>
         </div>
       </div>
-
-      <!-- </div> -->
-    </div>
+    <!-- </div> -->
 
   </div>
 
