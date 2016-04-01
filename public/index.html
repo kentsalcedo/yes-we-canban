@@ -17,8 +17,7 @@
 
     <div id="hover_login" class="nav-btn">
       <span>login</span>
-       <!-- <div class="dropdown-menu login-form"> -->
-       <div id="loginContent" class="form_block">
+      <div id="loginContent" class="form_block">
          <form class="loginForm" ng-submit="userLogin(user)">
            <fieldset>
              <div class="userNameForm">
@@ -31,11 +30,10 @@
                <input id="pwForm" placeholder="password" type="password" ng-model="user.password" />
              </div>
 
-             <button type="submit">Login</button>
+             <div class="login-btn" ng-click="userLogin(user)">login</div>
            </fieldset>
          </form>
-       </div>
-       <!-- </div> -->
+      </div>
     </div>
 
       <div id="hover_sign" class="nav-btn">
@@ -73,9 +71,9 @@
                 </div>
               </div>
 
-              <div class="addTaskBtn">
-                <a ng-click="addNewUser(newUser)">login</a>
-              </div>
+              <!-- <div class="addTaskBtn"> -->
+                <div class="login-btn2" ng-click="addNewUser(newUser)">login</div>
+              <!-- </div> -->
             </fieldset>
           </form>
         </div>
