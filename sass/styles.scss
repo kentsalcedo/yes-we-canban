@@ -262,15 +262,40 @@ span.todo {
 }
 
 #task_form_block {
-  // background-color: $tertiary;
-  // width: 400px;
-  text-align: center;
+  position: absolute;
+  z-index: 5;
+  background-color: white;
+  width: 300px;
+  padding: 5px;
+  -webkit-box-shadow: 6px 7px 29px 2px rgba(0,0,0,0.75);
+  -moz-box-shadow: 6px 7px 29px 2px rgba(0,0,0,0.75);
+  box-shadow: 6px 7px 29px 2px rgba(0,0,0,0.75);
+
+}
+
+input[type=text],
+textarea[type=text] {
+  width: 100%;
+  float: left;
+  margin-top: 8px;
+  border-style: none;
+  border-bottom: 1px solid #4A5A80;
+}
+
+.addTaskBtn {
+  float: right;
+  font-size: 15px;
+}
+
+.canTaskBtn {
+  float: left;
+  font-size: 15px;
 }
 
 .groupForm {
-  padding: 10px;
-  height: 100px;
-  width: 300px;
+  // padding: 10px;
+  // height: 100px;
+  // width: 300px;
 }
 
 #new_task_desc {
@@ -278,7 +303,7 @@ span.todo {
 }
 
 #new_group_name {
-  width: 100%;
+  // width: 100%;
 }
 
 .btn-primary {
@@ -293,32 +318,32 @@ span.todo {
   margin-top: 8px;
 }
 
-div.dropdown-menu {
-  position: fixed;
-  z-index: 2; /* Make sure its above other items. */
-  border: 2px solid #555555;
-  background-color: #ccc;
-  border-radius: 5px;
-  text-align: center;
-  line-height: 30px;
-  width: 400px; /* Set your desired with */
-  top: 25%;
+// div.dropdown-menu {
+//   position: fixed;
+//   z-index: 2; /* Make sure its above other items. */
+//   border: 2px solid #555555;
+//   background-color: #ccc;
+//   border-radius: 5px;
+//   text-align: center;
+//   line-height: 30px;
+//   width: 400px; /* Set your desired with */
+//   top: 25%;
 
-  input {
-    border: 0px;
-    text-align: center;
-    width: 90%;
-    margin: 10px;
-  }
+//   input {
+//     border: 0px;
+//     text-align: center;
+//     width: 90%;
+//     margin: 10px;
+//   }
 
-  textarea {
-    border: 0px;
-    text-align: center;
-    wrap: hard;
-    width: 90%;
-    margin-top: 10px;
-  }
-}
+//   textarea {
+//     border: 0px;
+//     text-align: center;
+//     wrap: hard;
+//     width: 90%;
+//     margin-top: 10px;
+//   }
+// }
 
 .newtask-form {
   position: fixed;

@@ -1,0 +1,18 @@
+{
+  "name": "angular-tutorial",
+  "description": "",
+  "main": "server.js",
+  "authors": [
+    "RizOrt218 <rizhiafalen@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/kentsalcedo/yes-we-canban",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

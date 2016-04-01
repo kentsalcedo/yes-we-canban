@@ -4,84 +4,62 @@
 
 
 <div class="taskColumn">
-  <div class="col-title" ng-submit="addTask()"><span class="todo">TO DO</span>
-    <a ng-click="show()">
-      +
-      </a>
+  <div  ng-init="formTask=false">
+    <div class="col-title" ng-submit="addTask()"><span class="todo">TO DO</span>
+      <a class="btn btn-secondary dropdown-toggle addtask" ng-click="formTask=true;" >+</a>
 
-      <script type="text/ng-template" id="modal.html">
-               <div class="modal fade">
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <button type="button" class="close" ng-click="close('Cancel')" data-dismiss="modal" aria-hidden="true">&times;</button>
-                      <h4 class="modal-title">Yes or No?</h4>
-                    </div>
-                    <div class="modal-body">
-                      <p>It's your call...</p>
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" ng-click="close('No')" class="btn btn-default" data-dismiss="modal">No</button>
-                      <button type="button" ng-click="close('Yes')" class="btn btn-primary" data-dismiss="modal">Yes</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-           </script>
+      <div id="task_form_block" ng-show="formTask">
+        <form name="formAddTask">
+          <fieldset>
+            <legend>New Goal</legend>
+            <!-- <div class=""> -->
+              <input id="" type="text" ng-model="new_task.title" placeholder="title" required/>
+            <!-- </div> -->
 
+            <!-- <div class="new_task_desc"> -->
+              <div><textarea type="text" ng-model="new_task.desc" placeholder="description"/></div>
+            <!-- </div> -->
 
+            <!-- <div class="new_task_priority"> -->
+              <div><input type="text" ng-model="new_task.priority" placeholder="priority"/></div>
+            <!-- </div> -->
 
-   <div class="dropdown-menu newtask-form">
-     <div id="task_form_block">
-       <form class="formTask" name="formAddTask">
-         <fieldset>
-           <div class="new_task_title">
-             <!-- <label for="new_task_title">New Task Title</label> -->
-             <div><input id="new_task_title" type="text" ng-model="new_task.title" placeholder="title"/></div>
-           </div>
+            <!-- <div class="new_task_assignedTo"> -->
+              <div><input type="text" ng-model="new_task.assignedTo" placeholder="assigned to"/></div>
+            <!-- </div> -->
 
-           <div class="new_task_desc">
-             <div><textarea id="new_task_desc" type="text" ng-model="new_task.desc" placeholder="description"/></div>
-           </div>
-
-           <div class="new_task_priority">
-             <div><input id="new_task_priority" type="text" ng-model="new_task.priority" placeholder="priority"/></div>
-           </div>
-
-           <div class="new_task_assignedTo">
-             <div><input id="new_task_assignedTo" type="text" ng-model="new_task.assignedTo" placeholder="assigned to"/></div>
-           </div>
-
-           <button type="submit">Add Task</button>
-         </fieldset>
-       </form>
-       </div>
-     </div>
-    <!-- </div> -->
-  </div> <!-- end of task form -->
-
-
-  <div class="singleTask control-group" ng-repeat="task in tasksArray | filter:task.status='__status__toDo__'" ng-swith on=task.>
-
-    <div class="cardBtn">
-      <div class="eachCardBtn"><i ng-click="deleteTask(task._id)" class="delete-button fa fa-times fa-lg"></i>
+            <a class="addTaskBtn" ng-click="addTask(); formTask=false">Add Task</a>
+            <a class="canTaskBtn" ng-click="formTask=false">Cancel</a>
+          </fieldset>
+        </form>
       </div>
-      <div class="eachCardBtn"><i ng-click="MoveTaskInProgress(task)" class="update-status-btn fa fa-angle-double-right fa-2x"></i>
+
       </div>
     </div>
 
-    <a href="#" ng-click="showDetails = ! showDetails"><h3 class="new_task_title"> {{ task.title }}</h3></a>
 
-      <div class="task-details" ng-class="{ 'hidden': ! showDetails }" ng-show="showDetails">
-        <p class"new_task_desc" editable-text="task.desc" onbeforesave="updateTask(task)"><span class="form-label">DESC: </span>{{ task.desc }}</p>
-        <p class"new_task_priority" editable-text="task.priority" onbeforesave="updateTask(task)"><span class="form-label">PRIORITY: </span>{{ task.priority }}</p>
-        <p class"new_task_assignedTo" editable-text="task.assignedTo" onbeforesave="updateTask(task)"><span class="form-label">ASSIGNED TO: </span>{{ task.assignedTo }}</p>
-        <p class"new_task_createBy"><span class="form-label">CREATED BY: </span>{{ task.createdBy.firstName }}</p>
+    <div class="singleTask control-group" ng-repeat="task in tasksArray | filter:task.status='__status__toDo__'" ng-swith on=task.>
+
+
+      <div class="cardBtn">
+        <div class="eachCardBtn"><i ng-click="deleteTask(task._id)" class="delete-button fa fa-times fa-lg"></i>
+        </div>
+        <div class="eachCardBtn"><i ng-click="MoveTaskInProgress(task)" class="update-status-btn fa fa-angle-double-right fa-2x"></i>
+        </div>
       </div>
 
-  </div>
+      <a href="#" ng-click="showDetails = ! showDetails"><h3 class="new_task_title"> {{ task.title }}</h3></a>
 
+        <div class="task-details" ng-class="{ 'hidden': ! showDetails }" ng-show="showDetails">
+          <p class"new_task_desc" editable-text="task.desc" onbeforesave="updateTask(task)"><span class="form-label">DESC: </span>{{ task.desc }}</p>
+          <p class"new_task_priority" editable-text="task.priority" onbeforesave="updateTask(task)"><span class="form-label">PRIORITY: </span>{{ task.priority }}</p>
+          <p class"new_task_assignedTo" editable-text="task.assignedTo" onbeforesave="updateTask(task)"><span class="form-label">ASSIGNED TO: </span>{{ task.assignedTo }}</p>
+          <p class"new_task_createBy"><span class="form-label">CREATED BY: </span>{{ task.createdBy.firstName }}</p>
+        </div>
+
+    </div>
 </div>
+
 
 
 <div class="taskColumn">

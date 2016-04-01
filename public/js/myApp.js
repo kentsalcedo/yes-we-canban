@@ -1,6 +1,6 @@
 // this defines module since it is taking 2 arguments
 // external dependencies go inside the []
-angular.module('myApp', ['ngRoute', 'ngAnimate','xeditable', 'angularModalService']);
+angular.module('myApp', ['ngRoute', 'ngAnimate','xeditable']);
 
 var myApp = angular.module('myApp');
 
