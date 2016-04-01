@@ -164,6 +164,13 @@ span.todo {
 .delete-button {
   margin-top: 6.5px; }
 
+#hover-content {
+  display: none; }
+
+#hover-me:hover #hover-content {
+  display: block;
+  position: absolute; }
+
 .btn-group {
   margin: 10px; }
 
@@ -171,7 +178,7 @@ span.todo {
   background-color: purple;
   flex-flow: row no wrap; }
 
-#task_form_block {
+.form_block {
   position: absolute;
   z-index: 5;
   background-color: white;
@@ -219,21 +226,11 @@ textarea[type=text] {
   /* Set your desired with */
   top: 15%; }
 
-.btn {
-  background: transparent; }
-
 .addtask {
   float: left;
   max-height: 100%;
   font-size: 35px;
   line-height: 25px; }
-
-.regFormContainer {
-  position: absolute;
-  z-index: 2;
-  /* Make sure its above other items. */
-  top: 50%;
-  left: 500px; }
 
 #footer {
   background-color: #303436;

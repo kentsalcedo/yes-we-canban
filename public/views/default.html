@@ -8,25 +8,17 @@
     <div class="col-title" ng-submit="addTask()"><span class="todo">TO DO</span>
       <a class="btn btn-secondary dropdown-toggle addtask" ng-click="formTask=true;" >+</a>
 
-      <div id="task_form_block" ng-show="formTask">
+      <div class="form_block" ng-show="formTask">
         <form name="formAddTask">
           <fieldset>
             <legend>New Goal</legend>
-            <!-- <div class=""> -->
               <input id="" type="text" ng-model="new_task.title" placeholder="title" required/>
-            <!-- </div> -->
 
-            <!-- <div class="new_task_desc"> -->
               <div><textarea type="text" ng-model="new_task.desc" placeholder="description"/></div>
-            <!-- </div> -->
 
-            <!-- <div class="new_task_priority"> -->
               <div><input type="text" ng-model="new_task.priority" placeholder="priority"/></div>
-            <!-- </div> -->
 
-            <!-- <div class="new_task_assignedTo"> -->
               <div><input type="text" ng-model="new_task.assignedTo" placeholder="assigned to"/></div>
-            <!-- </div> -->
 
             <a class="addTaskBtn" ng-click="addTask(); formTask=false">Add Task</a>
             <a class="canTaskBtn" ng-click="formTask=false">Cancel</a>

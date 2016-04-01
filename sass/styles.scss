@@ -238,8 +238,13 @@ span.todo {
   // float: right;
 }
 
-.registerDiv {
+#hover-content {
+    display:none;
+}
 
+#hover-me:hover #hover-content {
+    display:block;
+    position: absolute;
 }
 
 .loginDiv {
@@ -261,7 +266,7 @@ span.todo {
   flex-flow: row no wrap;
 }
 
-#task_form_block {
+.form_block {
   position: absolute;
   z-index: 5;
   background-color: white;
@@ -359,7 +364,7 @@ textarea[type=text] {
 }
 
 .btn {
-  background: rgba(0, 0, 0, 0);
+  // background: rgba(0, 0, 0, 0);
 }
 
 .addtask {
@@ -370,10 +375,10 @@ textarea[type=text] {
 }
 
 .regFormContainer {
-  position: absolute;
-  z-index: 2; /* Make sure its above other items. */
-  top: 50%;
-  left: 500px;
+  // position: absolute;
+  // z-index: 2; /* Make sure its above other items. */
+  // top: 50%;
+  // left: 500px;
 }
 // .dropdown-menu {
 //   // background-color: red;

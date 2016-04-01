@@ -41,11 +41,10 @@
     </div>
 
     <div class="nav-btn nav-login">
-      <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      sign-up
-      </button>
-      <div class="dropdown-menu regFormContainer">
-        <div class="registerDiv">
+      <div id="hover-me">
+        <span>sign-up</span>
+      <!-- <div class="dropdown-menu regFormContainer"> -->
+        <div id="hover-content" class="form_block">
           <form class="registerForm" ng-submit="addNewUser(newUser)" ng-model="newUser">
             <fieldset>
               <div class="firstnameForm">
@@ -78,13 +77,15 @@
                 </div>
               </div>
 
-              <div class="commit">
-                <button type="submit">login</button>
+              <div class="addTaskBtn">
+                <a ng-click="addNewUser(newUser)">login</a>
               </div>
             </fieldset>
           </form>
         </div>
       </div>
+
+      <!-- </div> -->
     </div>
 
   </div>
