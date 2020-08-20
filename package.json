@@ -13,7 +13,7 @@
   "dependencies": {
     "angular-modal-service": "^0.6.10",
     "angular-xeditable-npm": "^0.1.9",
-    "bcrypt": "^0.8.5",
+    "bcrypt": "^5.0.0",
     "body-parser": "^1.14.2",
     "bootstrap": "^3.3.6",
     "cookie-parser": "^1.4.1",
